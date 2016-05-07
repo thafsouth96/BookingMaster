@@ -1,0 +1,14 @@
+ 
+Configuration de Git : 
+ git config --global user.name "John Doe"
+ git config --global user.email johndoe@example.com
+
+
+Pour cloner le dépôt du Projet Booker, il suffit de lancer la commande suivante :
+ git clone https://github.com/thafsouth96/BookingMaster.git
+
+le répertoire du projet chargé en local ( check it avec un ls ça doit marché :) ) 
+
+
+la gestion des commit, push , commit 
+
