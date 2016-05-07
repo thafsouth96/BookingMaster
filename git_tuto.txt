@@ -24,7 +24,7 @@ la gestion des commit, push
 	maintenant il suffit de commit et push here we go : 
 
 	==>  faite toujours un commit avant le push  
-	==> git commit -m "ceci est le message du commite 
+	==> git commit -m "ceci est le message du commit" 
 	ps : le message pour commenter ce que vous commit 
 	
 	==> git push origin master 
