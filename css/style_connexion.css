@@ -1,0 +1,57 @@
+body {
+  margin :0;
+  padding: 0;
+
+}
+body::after {
+  /* image du  background */
+  content :"";
+  background: url(../design/icon/background.jpg);
+  opacity: 0.5 ;
+  top : 0;
+  left : 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1 ;
+}
+
+div {
+/*Centrer la div */
+
+margin : 0 auto;
+width : 100px ;
+margin-top: 200px;
+}
+
+#champs {
+ /* champs de saisie */
+  width : 200px;
+  height: 40px ;
+}
+
+#connexion {
+  /* boutton de connexion */
+   width : 200px ;
+   height : 30px;
+   color : black ;
+   background-color : #5389d6 ; /* blue */
+   font-weight: bold ;
+
+
+}
+#inscription {
+  /* boutton d'inscription*/
+  width : 200px ;
+  height: 30px ;
+  background-color : #ff8410 ; /* orange */
+  color : black ;
+  font-weight: bold ;
+
+}
+#password {
+  /* texte : mot de passe oublié ?*/
+  width : 200px ;
+  color: blue ;
+  text-decoration: underline;
+}
