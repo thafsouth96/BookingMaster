@@ -1,13 +1,13 @@
 $(document).ready(function() {
 	// Comportement des boutons de menus
 	$('body div #connexion').bind('click', function() { // Au clic sur le bouton connexion"
-		activerOptionMenu($(this));
+
 		$('body').load('html_pages/main.html') ; // On charge la page accueil.html dans le body
 	});
 
-	$('body nav #inscription').bind('click', function() { // Au clic sur le bouton "mnuQuiSommesNous" dans le menu
-		activerOptionMenu($(this));
-		// On charge la page inscription.html dans le body et on appelle la fonction d'initialisation de cette page
+	$('body nav #inscription').bind('click', function() {
+    // Au clic sur le bouton "mnuQuiSommesNous" dans le menu
+    // On charge la page inscription.html dans le body et on appelle la fonction d'initialisation de cette page
 		$('body').load('pages/inscription.html') ;
 	});
 
