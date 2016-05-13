@@ -1,11 +1,11 @@
 <?php
     $menu = array(
-    'messagerie'  => array('image'=>'../design/icon/icon_email.png' ,  'text'=>'Messagerie',  'url'=>'../View/mailbox.view.php'),
-    'contacts'  => array('image'=>'../design/icon/contact-book.png',  'text'=>'Mes Contacts',  'url'=>'../View/contact.view.php'),
-    'calendrier' => array('image'=>'../design/icon/datepicker.png',  'text'=>'Mon Calendrier', 'url'=>'../View/calendrier.view.php'),
-    'notes' => array('image'=>'../design/icon/note.png',  'text'=>'Mes Notes', 'url'=>''),
-    'parametres' => array('image'=>'../design/icon/settings.png',  'text'=>'Paramètres', 'url'=>''),
-    'deconnexion' => array('image'=>'../design/icon/logout.png',  'text'=>'Deconnexion', 'url'=>''),
+    'messagerie'  => array('image'=>'../data/icon/icon_email.png' ,  'text'=>'Messagerie',  'url'=>'../View/mailbox.view.php'),
+    'contacts'  => array('image'=>'../data/icon/contact-book.png',  'text'=>'Mes Contacts',  'url'=>'../View/contact.view.php'),
+    'calendrier' => array('image'=>'../data/icon/datepicker.png',  'text'=>'Mon Calendrier', 'url'=>'../View/calendrier.view.php'),
+    'notes' => array('image'=>'../data/icon/note.png',  'text'=>'Mes Notes', 'url'=>''),
+    'parametres' => array('image'=>'../data/icon/settings.png',  'text'=>'Paramètres', 'url'=>''),
+    'deconnexion' => array('image'=>'../data/icon/logout.png',  'text'=>'Deconnexion', 'url'=>''),
     );
 
     function generateMenu($items) {
