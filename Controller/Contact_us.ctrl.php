@@ -10,7 +10,6 @@ $email.='florian.ekoue@iut2.upmf-grenoble.fr';
      'X-Mailer: PHP/' . phpversion();
 $objet= 'questions';
 $message=$_POST['message'];
-$messagePopUp = 'Votre message a bien été envoye aux administrateurs';
 
 
 if ((!empty($message)) && (isset($_POST['envoi']))) {
