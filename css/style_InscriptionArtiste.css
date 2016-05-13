@@ -1,0 +1,54 @@
+
+div{
+	margin:auto;
+	width:auto;
+	margin-top:200px;
+}
+
+form{
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
+	display:inline-block:
+}
+
+input[type=text], input[type=password]{
+	
+	margin-left:auto;
+	margin-right:auto;
+	display:inline-block:
+}
+
+input[type=radio]{
+	margin-top:10px;
+	padding:150px;
+	display:relative:
+}
+
+input[type=button]{	
+	margin-left:auto;
+	margin-right:auto;
+	display:center:
+}
+
+#champs{
+	width:300px;
+	padding:15px;
+	border:1px solid gray;
+}
+
+#radio{
+
+}
+
+#Inscription{
+	width:200px;
+	padding:10px;
+	border:1px solid gray;
+	border-radius:4px;
+	background-color:#5389d6;
+}
+
+a{
+	font-weight:22px;
+}
