@@ -3,14 +3,21 @@
 
 
 <form>
-<input  id= 'champs' type="text" name="Prenom"  placeholder="Prenom" size="10"></br>
-<input  id='champs' type="text" name="Nom" placeholder="Nom" size="20"></br>
-<input  id='champs' type="Date" name="Date De naissance" placeholder="Date de naissance" size="20"></br>
-<input  id='champs' type="text" name="@electronique" placeholder="Adresse éléctronique" size=""></br>
-<input  id='champs' type="password" name="password" placeholder="Mot de passe" size="20"></br>
-<input  id='champs' type="password" name="passwordConfirm" placeholder="Confirmation mot de passe" size="20"></br>
 
-<br><input id = 'suivant' type="button" name="Suivant" value="Suivant"></br>
 
-<br><input id = 'reset' type = "button" name ="Reinitialiser" value = "Reinitialiser"></br>
+    <input  class="champs" id="nom" type="text" name="nom" placeholder="Votre nom" size="20"></br>
+    <input  class="champs" id="nom" type="text" name="prénom" placeholder="Votre prénom" size="20"></br>
+    <input  class="champs" id="dateNaiss" type="Date" name="Date De naissance" placeholder="Date de naissance" size="20"></br>
+
+    <input  class= "champs" id = "@electronique" type='text' name='@éléctronique' placeholder="Adresse éléctronique" size=""></br>
+    <input  class="champs" id= "password " type='password' name='password' placeholder="Mot de passe" size="20"></br>
+    <input  class="champs" id = "passwordConfirm" type='password' name='passwordConfirm' placeholder="Confirmation de mot de passe" size="20"></br>
+
+    <script type="text/javascript" src="../lib/jQuery/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript" src="../js/loadInscription.js"></script>
+
+    <br><input class = "buttonBlue" id = "suivant" type="button" name="Suivant" value="Suivant" ></br>
+
+    <br><input  class = "buttonOrange" id = "reset" type = "button" name ="Reinitialiser" value = "Reinitialiser"></br>
 </form>

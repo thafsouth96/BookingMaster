@@ -24,13 +24,15 @@ width : 100px ;
 margin-top: 200px;
 }
 
-#champs {
+.champs {
  /* champs de saisie */
   width : 200px;
   height: 40px ;
+  border-radius: 0px
 }
 
-#connexion {
+
+.buttonBlue {
   /* boutton de connexion */
    width : 200px ;
    height : 30px;
@@ -40,7 +42,7 @@ margin-top: 200px;
 
 
 }
-#inscription {
+.buttonOrange {
   /* boutton d'inscription*/
   width : 200px ;
   height: 30px ;
