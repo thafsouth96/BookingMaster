@@ -1,12 +1,23 @@
 
 
-<input  id= 'champs' type="text" name="Prénom"  placeholder="Login" size="10">
-<input  id='champs' type='text' name="Nom" placeholder="Mot de passe" size="20">
-<input  id='champs' type='Date' name='Date De naissance' placeholder="Mot de passe" size="20">
-<input  id='champs' type='text' name='@éléctronique' placeholder="Adresse éléctronique" size="">
-<input  id='champs' type='password' name='password' placeholder="Mot de passe" size="20">
-<input  id='champs' type='password' name='passwordConfirm' placeholder="Confirmation de mot de passe" size="20">
+<!--Etape de upload d'une pièce d'identité et d'une licence -->
+<form>
 
-<br><input id = 'suivant' type="button" name="Suivant" value="Suivant"></br>
+  <div id ="parcourirLicence">
+    <p class = "parcourir">Joindre votre Licence</p>
 
-<br><input id = 'reset' type = "button" name ="Réinitialiser" value = "Réinitialiser"></br>
+    <input  id="licence" type="file" name="licence">
+  </div>
+
+
+  <div id ="parcourirId" >
+    <!-- encodage : é = &eacute / è = &egrave -->
+    <p class="parcourir">Joindre une Pi&egravece d'identit&eacute</p>
+
+    <input  id="identite" type="file" name="identite">
+  </div>
+
+  <br><input class = "buttonBlue" id = "suivant" type="button" name="Suivant" value="Suivant" ></br>
+
+  <br><input  class = "buttonOrange" id = "Precedant" type = "button" name ="Reinitialiser" value = "Précédant"></br>
+</form>
