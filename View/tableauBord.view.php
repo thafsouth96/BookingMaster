@@ -45,16 +45,16 @@
   </div>
 
   <div id = "messagerie">
-    <h2>Messagerie<h2>
+    <h2>Messagerie</h2>
     <table>
       <tr>
-
+        <td>Boite de réception</td><td>Messages envoyés</td><td>Brouillons</td>
       </tr>
     </table>
   </div>
 
   <div id = "notes">
-    <h2>Notes<h2>
+    <h2>Notes</h2>
   </div>
 
 

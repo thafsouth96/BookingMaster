@@ -42,3 +42,19 @@ body {
 	top:-40px;
   color: white;
 }
+
+#messagerie table {
+  color: black;
+  border: solid;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+#messagerie td {
+  border-left: solid;
+  padding: 0px;
+}
+
+#notes {
+
+}
