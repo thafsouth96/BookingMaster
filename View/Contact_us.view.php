@@ -13,7 +13,7 @@
       <form id="contact" action="../Controller/Contact_us.ctrl.php" method="post">
 
 
-      		<p><label for="message">Message :</label><textarea id="message" name="message" value="Votre Message" cols="30" rows="8"></textarea></p>
+      		<p><label for="message">Message :</label><textarea id="message" name="message" placeholder="Votre Message" cols="30" rows="8" required="required"></textarea></p>
       	</fieldset>
 
       	<input type="submit" name="envoi" value="Envoyer" /></div>
