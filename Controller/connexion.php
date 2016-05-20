@@ -5,28 +5,35 @@
 
 
 
-function authentification(){
-  $psw = $_POST['password'];
-  $mail = $_POST['mail'] ;
+          $result = array() ;
+          	$result["status"] = "success" ;
+          	if (isset($_REQUEST['login']) && isset($_REQUEST['psw'])  ) {
+          		if (isset($artistes[$_REQUEST['idArtiste']])) {
+          			// On a re�u idPersonne en POST OU GET, on a une personne avec cet id
 
-  $id_Psw = $dao->getPassword($psw) ;
-  $id_mail = $dao->getMailBooker($mail);
-          if ($mdp != NULL && $mail != NULL && $id_Psw == $id_mail) {
-              session_start();
-              $_SESSION['id'] = $id_Psw ;
-              return true ; }
-          else {return false ; }
+                $psw = $_POST['password'];
+                $mail = $_POST['mail'] ;
+
+                $id_Psw = $dao->getPassword($psw) ;
+                $id_mail = $dao->getMailBooker($mail);
+                if ($mdp != NULL && $mail != NULL && $id_Psw == $id_mail) {
+                      session_start();
+                      $_SESSION['id'] = $id_Psw ;
+                      $result["reponse"]="true";
+
+                }else{
+                    $result["reponse"]="false";
+                }
 
 
-}
+          		} else {
+          			$result["status"] = "error" ;
+          		}
+          	} else {
+          		$result["status"] = "error" ;
+          		$result["errMessage"] = "Param�tre idPersonne manquant" ;
+          	}
+          		echo json_encode($result) ;
+          ?>
 
-
-              /*** Si l'authentification est effectué je redirige vers le tableauDeBord du booker ****/
-              include_once('../Controler/tableauDeBord.php');
-              }
-
-              /***** Sinon **/
-           else {
-              echo "<script> alert(\"Le mot de passe ou le pseudo que vous avez saisi est incorrect. Veuillez r\u00e8essayer\")</script>";
-              header('Location : ../index.php');
-          Mai
+?>
