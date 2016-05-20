@@ -1,7 +1,6 @@
 <?php
 
-    require_once("../model/Categorie.class.php");
-    require_once("../model/Article.class.php");
+
 
     global $ref;
     global $libelle;
@@ -18,7 +17,7 @@
         // L'objet local PDO de la base de donnée
         public $db;
         // Le type, le chemin et le nom de la base de donnée
-        private $database = 'sqlite:../data/db/'; // a completer
+        private $database = 'sqlite:../data/db/bookingmaster.db'; // a completer
         // Constructeur chargé d'ouvrir la BD
         function __construct() {
             try {
@@ -30,16 +29,16 @@
         }
         //affiche tous les artistes/groupes
         public function afficheAG(){
-          $req = $this->db->query("SELECT * FROM contact where fonction="musicien"");
-         return $req->fetchAll(PDO::FETCH_CLASS, "Contact");
+          $req = $this->db->query("SELECT * FROM contact where fonction='musicien'");
+          return $req->fetchAll(PDO::FETCH_CLASS, "Contact");
         }
 
         // ajoute un contact à la base de données
         function ajoutC($fonc,$nom,$email,$tel,$nomG,$style,$autre,$groupe,$des) {
-         $req = "INSERT INTO contact VALUES $fonc,$nom,$email,$tel,$nomG,$style,$autre,$groupe,$des";
-         $req2 = $this->db->prepare($req);
-         $req2->execute();
-         return  $req2->fetchAll(PDO::FETCH_CLASS,"Contact");
+           $req = "INSERT INTO contact VALUES $fonc,$nom,$email,$tel,$nomG,$style,$autre,$groupe,$des";
+           $req2 = $this->db->prepare($req);
+           $req2->execute();
+           return  $req2->fetchAll(PDO::FETCH_CLASS,"Contact");
        }
 
 
@@ -47,8 +46,8 @@
 
        /****Retourne id du booker à partir de son mail******/
         function getMailBooker($mail){
-          $rquete1 = "SELECT idB FROM booker WHERE mail = '$mail'";
-          //var_dump($_POST['pseudo']);
+          $rquete1 = "SELECT * FROM booker WHERE mailB = '$mail'";
+          //var_dump($rquete1) ;
           $rs =$this->db->query($rquete1);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Booker');
           return $rw[0] ;
@@ -56,8 +55,9 @@
         }
         /** Retourne l'id du booker à partir du mot de passe entré ***/
         function getPasswordBooker($mdp) {
-          $rquete2 = "SELECT idB FROM  WHERE password='$mdp'";
+          $rquete2 = "SELECT * FROM booker WHERE mdp ='$mdp'";
           $rs2 = $this->db->query($rquete2);
+
           $rw2 = $rs2->fetchAll(PDO::FETCH_CLASS,'Booker');
           return $rw2[0] ;
         }
@@ -77,24 +77,24 @@
     //var_dump($dao);
 
 /*--------------------------------GESTION DES EVENEMENTS-------------------------------------*/
-
-	public function select_instance($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$SimageE) {S
-		$query = "SELECT * FROM evenement";
+/*
+  function select_instance($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$SimageE) {
+		$query = "SELECT * FROM evenements ";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
 		$query .= " AND dateE='".$dateE."' AND lienBE='".$lienBE."' AND infoE='".$infoE."'";
 		$query .= " AND imageE='".$imageE."'";
-	
+
 		$stmt = $this->dbh->prepare($query);
 
     	$stmt->execute();
-    
+
     	$result = $stmt->fetch(PDO::FETCH_BOTH);
-  
+
     	$instance = new evenement($result[0],$result[1],$result[2],$result[3],$result[4],$result[5],$result[6]);
 		return $instance;
 	}
 
-	public function creerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){
+ function creerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){
 		$query = "INSERT INTO evenements VALUES $idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE";
 		try{
 		$req = $this->db->prepare($query);
@@ -103,11 +103,11 @@
 		echo 'Echec insertion évènement';
 		return false;
 		}
-	
+
         return  $req->fetchAll(PDO::FETCH_CLASS,"evenement");
 	}
 
-	public function supprimerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){	
+ function supprimerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){
 		$query = "DELETE FROM evenement";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
 		$query .= " AND dateE='".$dateE."' AND lienBE='".$lienBE."' AND infoE='".$infoE."'";
@@ -123,7 +123,7 @@
 		return $result;
 	}
 
-	public function modifierNomE($idE){	
+function modifierNomE($idE){
 		$query = "UPDATE ".$this->table;
 		$query .= " SET nomE='".$nomE."' WHERE idE='".$idE."'";
 		try{
@@ -137,7 +137,7 @@
 		return $result;
 	}
 
-	public function modifierDateE($idE){	
+ function modifierDateE($idE){
 		$query = "UPDATE ".$this->table;
 		$query .= " SET dateE='".$dateE."' WHERE idE='".$idE."'";
 		try{
@@ -151,7 +151,7 @@
 		return $result;
 	}
 
-	public function modifierLienE($idE){	
+  function modifierLienE($idE){
 		$query = "UPDATE ".$this->table;
 		$query .= " SET lienBE='".$lienBE."' WHERE idE='".$idE."'";
 		try{
@@ -165,7 +165,7 @@
 		return $result;
 	}
 
-	public function modifierInfoE($idE){	
+	function modifierInfoE($idE){
 		$query = "UPDATE ".$this->table;
 		$query .= " SET infoE='".$infoE."' WHERE idE='".$idE."'";
 		try{
@@ -179,7 +179,7 @@
 		return $result;
 	}
 
-	public function modifierimageE($idE){	
+ function modifierimageE($idE){
 		$query = "UPDATE ".$this->table;
 		$query .= " SET imageE='".$imageE."' WHERE idE='".$idE."'";
 		try{
@@ -192,4 +192,5 @@
 		}
 		return $result;
 	}
+  */
     ?>

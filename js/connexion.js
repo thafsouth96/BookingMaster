@@ -3,8 +3,10 @@ $(document).ready(function() {
 	// Comportement des boutons de menus
 	$('body div #connexion').bind('click', function() { // Au clic sur le bouton connexion"
 
-	 	alert("Site en construction") ;
-		//verrifierConnexion() ; 
+	 	//alert("Site en construction") ;
+		verifierConnexion() ;
+		//document.location.href="../Controller/connexion.php";
+
 
 	});
 
@@ -16,6 +18,8 @@ $(document).ready(function() {
 
 
 });
+
+
 function verifierConnexion() {
 	// Comportement des boutons de menus
 	if ($('#login').val() === ""){
@@ -29,9 +33,14 @@ function verifierConnexion() {
 		return false ;
 
 	}
+	document.location.href="../Controller/connexion.php";
+	alert("ça marche") ; 
+}
 
 	//sinon je vérfie aussi le résultat de la fonction authentification dans Controller/connexion.php si c false je redirige affiche une alert
-	else{
+
+
+/*	else{
 
     var data='login=' + $('#login').val()+
 							'&psw=' + $('#psw').val();
@@ -57,4 +66,4 @@ function verifierConnexion() {
 				}
 		});
 }
-}
+}*/
