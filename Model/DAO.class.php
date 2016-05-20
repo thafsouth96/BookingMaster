@@ -44,35 +44,152 @@
 
 
        /***Fonction de connexion ****/
-        function getLogin(){
-          $rquete1 = "SELECT * FROM personne WHERE pseudo = '{$_POST['login']}'";
+
+       /****Retourne id du booker à partir de son mail******/
+        function getMailBooker($mail){
+          $rquete1 = "SELECT idB FROM booker WHERE mail = '$mail'";
           //var_dump($_POST['pseudo']);
           $rs =$this->db->query($rquete1);
-          $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Personne');
+          $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Booker');
           return $rw[0] ;
 
         }
-        function getPassword() {
-          $rquete2 = "SELECT * FROM personne WHERE password='{$_POST['password']}'";
+        /** Retourne l'id du booker à partir du mot de passe entré ***/
+        function getPasswordBooker($mdp) {
+          $rquete2 = "SELECT idB FROM  WHERE password='$mdp'";
           $rs2 = $this->db->query($rquete2);
-          $rw2 = $rs2->fetchAll(PDO::FETCH_CLASS,'Personne');
+          $rw2 = $rs2->fetchAll(PDO::FETCH_CLASS,'Booker');
           return $rw2[0] ;
         }
 
 
-        function inscription($pseudo,$psw) {
-            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from personne),$_POST['Pseudo'],$_POST['mot_de_passe'])" ;
+        function inscription($nom,$prenom,$dateNaiss,$mail,$mdp) {
+            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from booker),$nom,$prenom,$dateNaiss,$mail,$mdp)" ;
             $sth=$this->db->query($req);
-            $result = $sth->fetchAll(PDO::FETCH_CLASS,'Personne');
-            var_dump($result);
+            $result = $sth->fetchAll(PDO::FETCH_CLASS,'Booker');
             return $result[0];
 
-          }
+        }
 
 
       }
 
     //var_dump($dao);
 
+/*--------------------------------GESTION DES EVENEMENTS-------------------------------------*/
 
+	public function select_instance($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$SimageE) {S
+		$query = "SELECT * FROM evenement";
+		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
+		$query .= " AND dateE='".$dateE."' AND lienBE='".$lienBE."' AND infoE='".$infoE."'";
+		$query .= " AND imageE='".$imageE."'";
+	
+		$stmt = $this->dbh->prepare($query);
+
+    	$stmt->execute();
+    
+    	$result = $stmt->fetch(PDO::FETCH_BOTH);
+  
+    	$instance = new evenement($result[0],$result[1],$result[2],$result[3],$result[4],$result[5],$result[6]);
+		return $instance;
+	}
+
+	public function creerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){
+		$query = "INSERT INTO evenements VALUES $idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE";
+		try{
+		$req = $this->db->prepare($query);
+		$req->execute();
+    	} catch (PDOException $e) {
+		echo 'Echec insertion évènement';
+		return false;
+		}
+	
+        return  $req->fetchAll(PDO::FETCH_CLASS,"evenement");
+	}
+
+	public function supprimerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){	
+		$query = "DELETE FROM evenement";
+		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
+		$query .= " AND dateE='".$dateE."' AND lienBE='".$lienBE."' AND infoE='".$infoE."'";
+		$query .= " AND imageE='".$imageE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierNomE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET nomE='".$nomE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierDateE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET dateE='".$dateE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierLienE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET lienBE='".$lienBE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierInfoE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET infoE='".$infoE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierimageE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET imageE='".$imageE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
     ?>

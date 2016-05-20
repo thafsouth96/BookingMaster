@@ -4,6 +4,8 @@ $(document).ready(function() {
 	$('body div #connexion').bind('click', function() { // Au clic sur le bouton connexion"
 
 	 	alert("Site en construction") ;
+		// j'appelle le controller pour vérifier l'authentification et si c true je redirige vers le tableauDeBord 
+
 
 	});
 
@@ -15,3 +17,19 @@ $(document).ready(function() {
 
 
 });
+function verifierConnexion() {
+	// Comportement des boutons de menus
+	if ($('#login').val() === ""){
+		alert('Veuillez saisir votre adresse éléctronique');
+		$('#login').focus();
+	return false ;
+	 }
+	else if($('#psw').val() === ""){
+		alert('Veuillez entrez un mot de passe');
+		$('#psw').focus();
+		return false ;
+
+	}
+
+	//sinon je vérfie aussi le résultat de la fonction authentification dans Controller/connexion.php si c false je redirige affiche une alert
+}

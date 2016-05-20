@@ -6,12 +6,6 @@ $(document).ready(function() {
 
 	});
 
-
-	$('form #precedant').bind('click', function() {
-		//$('#content').load('../View/inscriptionEtape1.view.html') ;
-		alert("ça marche"); 
-	});
-
 	$('form #reset').bind('click', function() {
 
 			if(confirm("Voulez vous réinitialiser tous les champs")){
