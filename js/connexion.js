@@ -4,8 +4,7 @@ $(document).ready(function() {
 	$('body div #connexion').bind('click', function() { // Au clic sur le bouton connexion"
 
 	 	alert("Site en construction") ;
-		// j'appelle le controller pour vérifier l'authentification et si c true je redirige vers le tableauDeBord 
-
+		//verrifierConnexion() ; 
 
 	});
 
@@ -32,4 +31,30 @@ function verifierConnexion() {
 	}
 
 	//sinon je vérfie aussi le résultat de la fonction authentification dans Controller/connexion.php si c false je redirige affiche une alert
+	else{
+
+    var data='login=' + $('#login').val()+
+							'&psw=' + $('#psw').val();
+
+		$.ajax({	type: "POST",
+				url: "../Controller/connexion.php",
+				data: data, // On passe les informations saisies � l'�cran
+				success: function(data, textStatus, jqXHR) {
+					var result = JSON.parse(data) ;
+					if (result.status == 'success') {
+						if(result.reponse==="true"){
+							//redirection vers le tableau de bord
+							alert("réussi");
+						}
+						else{
+							// afficher un message d'erreur
+							alert("erreur");
+						}
+				}
+				},
+				error: function() {
+					alert('Erreur dans la requ�te au serveur.');
+				}
+		});
+}
 }
