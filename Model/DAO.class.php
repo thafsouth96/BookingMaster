@@ -44,30 +44,32 @@
 
 
        /***Fonction de connexion ****/
-        function getLogin(){
-          $rquete1 = "SELECT * FROM personne WHERE pseudo = '{$_POST['login']}'";
+
+       /****Retourne id du booker à partir de son mail******/
+        function getMailBooker($mail){
+          $rquete1 = "SELECT idB FROM booker WHERE mail = '$mail'";
           //var_dump($_POST['pseudo']);
           $rs =$this->db->query($rquete1);
-          $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Personne');
+          $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Booker');
           return $rw[0] ;
 
         }
-        function getPassword() {
-          $rquete2 = "SELECT * FROM personne WHERE password='{$_POST['password']}'";
+        /** Retourne l'id du booker à partir du mot de passe entré ***/
+        function getPasswordBooker($mdp) {
+          $rquete2 = "SELECT idB FROM  WHERE password='$mdp'";
           $rs2 = $this->db->query($rquete2);
-          $rw2 = $rs2->fetchAll(PDO::FETCH_CLASS,'Personne');
+          $rw2 = $rs2->fetchAll(PDO::FETCH_CLASS,'Booker');
           return $rw2[0] ;
         }
 
 
-        function inscription($pseudo,$psw) {
-            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from personne),$_POST['Pseudo'],$_POST['mot_de_passe'])" ;
+        function inscription($nom,$prenom,$dateNaiss,$mail,$mdp) {
+            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from booker),$nom,$prenom,$dateNaiss,$mail,$mdp)" ;
             $sth=$this->db->query($req);
-            $result = $sth->fetchAll(PDO::FETCH_CLASS,'Personne');
-            var_dump($result);
+            $result = $sth->fetchAll(PDO::FETCH_CLASS,'Booker');
             return $result[0];
 
-          }
+        }
 
 
       }
