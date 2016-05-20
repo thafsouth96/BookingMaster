@@ -1,2 +1,2 @@
-1GC|Mes artistes solo|Voici une description
-1GC|Mes groupes|Voici une description
+1B|Mes artistes solo|Voici une description
+1B|Mes groupes|Voici une description
