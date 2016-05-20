@@ -9,6 +9,7 @@
 
 <body onLoad="Defaults()">
 
+    <link rel="stylesheet" href="Design/calendrier.css" media="screen" charset="utf-8">
 <form name="when">
 <tr>
    <td><input type="button" value="<-- Last" onClick="Skip('-')"></td>

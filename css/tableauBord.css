@@ -1,0 +1,60 @@
+body {
+  border-color: black;
+}
+
+#barrePrincipale {
+  background-color: black;
+  height: 50px;
+}
+
+#barrePrincipale img {
+ padding-left: 5px;
+ padding-top: 5px;
+}
+
+#rechercheAvancee {
+  display:inline;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#recherche {
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+#calendrier, #messagerie, #notes {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 10px;
+  display: block;
+  border-style: solid;
+  border-top-width: 30px;
+  border-color: #ff8410;
+  border-radius: 5px;
+  float: left;
+}
+
+#calendrier h2, #messagerie h2 , #notes h2 {
+  margin:0;
+	position: relative;
+	top:-40px;
+  color: white;
+}
+
+#messagerie table {
+  color: black;
+  border: solid;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+#messagerie td {
+  border-left: solid;
+  padding: 0px;
+}
+
+#notes {
+
+}

@@ -6,7 +6,7 @@ body {
 body::after {
   /* image du  background */
   content :"";
-  background: url(../design/icon/background.jpg);
+  background: url("../data/icon/background.jpg");
   opacity: 0.5 ;
   top : 0;
   left : 0;
@@ -22,15 +22,18 @@ div {
 margin : 0 auto;
 width : 100px ;
 margin-top: 200px;
+
 }
 
-#champs {
+.champs {
  /* champs de saisie */
   width : 200px;
   height: 40px ;
+  border-radius: 0px
 }
 
-#connexion {
+
+.buttonBlue {
   /* boutton de connexion */
    width : 200px ;
    height : 30px;
@@ -40,7 +43,7 @@ margin-top: 200px;
 
 
 }
-#inscription {
+.buttonOrange {
   /* boutton d'inscription*/
   width : 200px ;
   height: 30px ;
@@ -54,4 +57,23 @@ margin-top: 200px;
   width : 200px ;
   color: blue ;
   text-decoration: underline;
+}
+
+/***Inscription Etape 2 **/
+
+.parcourir{
+  width : 300px ;
+  color: #5389d6 ;
+
+  font-weight: bold;
+  font-family: Arial , sans-serif;
+}
+.parcourirDiv{
+  border-width:1px;
+  border-color:black;
+  width: 300px ;
+  height: 200px;
+  background-color:white   ;
+  margin : 0px ;
+
 }
