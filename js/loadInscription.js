@@ -1,11 +1,26 @@
 
 $(document).ready(function() {
 	// Comportement des boutons de menus
-	$('form #suivant').bind('click', function() { // Au clic sur le bouton "mnuAccueil" dans le menu
-		verifierEtape1();
+	$('form #suivant').bind('click', function() {
+				verifierEtape1();
 
 	});
+
+	$('form #precedant').bind('click', function() {
+
+
+	});
+	$('form #precedant').bind('click', function() {
+		$('body div').load('../View/inscriptionEtape1.view.html') ;
+
+	});
+
 });
+
+function reset(){
+
+	
+}
 
 
 function verifierEtape1() {
