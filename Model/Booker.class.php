@@ -5,7 +5,7 @@
       public $nomB; /* nom du booker */
       public $dateNaissB;/* date de naissance sur le booker */
       public $mailB; /* mail du booker */
-      public $mdp;  /* mot de passe du booker pour se log(taille minimum de 5 caractères) */
+      public $mdp;  /* mot de passe du booker pour se log(taille minimum de 8 caractères) */
 
       function __toString() {
         return $this->getIdB() . " "
@@ -30,3 +30,5 @@
        function getMdp() {
          return $this->mdp;
        }
+
+}
