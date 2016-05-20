@@ -56,6 +56,7 @@
           Une pastille de couleur vous indiquera si vous avez un rendez-vous de prévu.
         </p>
       </div>
+      
       <div id="parametres">
         <p>
           Vous pouvez également modifier les paramétres de base.
