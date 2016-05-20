@@ -5,6 +5,8 @@ body {
 #barrePrincipale {
   background-color: black;
   height: 50px;
+  position: fixed;
+  width: 99%;
 }
 
 #barrePrincipale img {
@@ -16,7 +18,8 @@ body {
   display:inline;
   color: white;
   font-weight: bold;
-  text-align: center;
+  --text-align: center;
+  --vertical-align: middle;
 }
 
 #recherche {
@@ -24,8 +27,18 @@ body {
   margin-top: 10px;
 }
 
+#home, #notifications, #recherche, #rechercheAvancee{
+  float: right;
+  margin-right: 20px;
+}
+
+#tableauBord {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #calendrier, #messagerie, #notes {
-  margin-top: 20px;
+  margin-top: 70px;
   margin-left: 20px;
   padding: 10px;
   display: block;

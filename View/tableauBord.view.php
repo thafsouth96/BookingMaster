@@ -7,13 +7,17 @@
   </head>
   <div id = "barrePrincipale">
       <img id="menu" src="../data/icon/menu.png" alt="menu" width="40" height="40">
-      <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
-      <div id="rechercheAvancee"> Recherche avancée</div>
-      <a href="../Controller/tableauBord.ctrl.php"> <img id="home" src="../data/icon/home.png" alt="home" width="40"> </a>
+
       <img id="notifications" src="../data/icon/notifiOfficiel.png" alt="notification" width="40">
-      <img id="messages" src="../data/icon/message-512.gif" alt="messagerie" width="40">
+      <a href="../Controller/tableauBord.ctrl.php"> <img id="home" src="../data/icon/home.png" alt="home" width="40"> </a>
+      <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
+      <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
+
+      <!--img id="messages" src="../data/icon/message-512.gif" alt="messagerie" width="40"-->
 
   </div>
+
+  <div id="tableauBord">
 
   <div id = "calendrier">
       <h2>Calendrier</h2>
@@ -57,5 +61,6 @@
     <h2>Notes</h2>
   </div>
 
+</div>
 
 </html>
