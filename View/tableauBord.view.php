@@ -51,7 +51,7 @@
   <div id = "messagerie">
     <h2>Messagerie</h2>
     <table>
-      <tr>
+      <tr id = "enteteMessagerie">
         <td>Boite de réception</td><td>Messages envoyés</td><td>Brouillons</td>
       </tr>
     </table>

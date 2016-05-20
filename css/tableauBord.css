@@ -58,13 +58,17 @@ body {
 
 #messagerie table {
   color: black;
-  border: solid;
+  --border: solid 2px;
   font-weight: normal;
   margin-top: 10px;
 }
 
+#enteteMessagerie {
+  background-color: grey;
+}
+
 #messagerie td {
-  border-left: solid;
+  border: solid 1px;
   padding: 0px;
 }
 
