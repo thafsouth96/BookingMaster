@@ -1,0 +1,3 @@
+1GM|The Beatles|Voici une description des Beatles
+2GM|Georges Brassens|Voici une description de Brassens
+3GM|Renaud|Voici une description de Renaud

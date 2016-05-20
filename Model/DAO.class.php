@@ -76,5 +76,120 @@
 
     //var_dump($dao);
 
+/*--------------------------------GESTION DES EVENEMENTS-------------------------------------*/
 
+	public function select_instance($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$SimageE) {S
+		$query = "SELECT * FROM evenement";
+		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
+		$query .= " AND dateE='".$dateE."' AND lienBE='".$lienBE."' AND infoE='".$infoE."'";
+		$query .= " AND imageE='".$imageE."'";
+	
+		$stmt = $this->dbh->prepare($query);
+
+    	$stmt->execute();
+    
+    	$result = $stmt->fetch(PDO::FETCH_BOTH);
+  
+    	$instance = new evenement($result[0],$result[1],$result[2],$result[3],$result[4],$result[5],$result[6]);
+		return $instance;
+	}
+
+	public function creerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){
+		$query = "INSERT INTO evenements VALUES $idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE";
+		try{
+		$req = $this->db->prepare($query);
+		$req->execute();
+    	} catch (PDOException $e) {
+		echo 'Echec insertion évènement';
+		return false;
+		}
+	
+        return  $req->fetchAll(PDO::FETCH_CLASS,"evenement");
+	}
+
+	public function supprimerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){	
+		$query = "DELETE FROM evenement";
+		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
+		$query .= " AND dateE='".$dateE."' AND lienBE='".$lienBE."' AND infoE='".$infoE."'";
+		$query .= " AND imageE='".$imageE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierNomE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET nomE='".$nomE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierDateE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET dateE='".$dateE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierLienE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET lienBE='".$lienBE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierInfoE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET infoE='".$infoE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
+
+	public function modifierimageE($idE){	
+		$query = "UPDATE ".$this->table;
+		$query .= " SET imageE='".$imageE."' WHERE idE='".$idE."'";
+		try{
+		$stmt = $this->dbh->prepare($query);
+    	$result	=$stmt->execute();
+    		} catch (PDOException $e) {
+    		//echo $e->getMessage();
+   	 	echo 'Echec suppression évènement';
+    	return false;
+		}
+		return $result;
+	}
     ?>

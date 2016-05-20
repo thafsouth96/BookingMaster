@@ -22,9 +22,7 @@ include('Contact.class.php');
         public $adresseAr; /* adresse de l'artiste */
         public $emailAr; /*email de l'artiste */
         public $descriptionAr; //description courte de l'artiste
-        public $lienAr; // liens de l'artiste
-        public $videoAr; // video youtube d'un son de l'artiste
-        public $imageAr; // deux images pour les artistes
+
       public function __toString() {
         return $this->getIdAr() . " "
               .$this->getNomAr() . " "
@@ -33,10 +31,7 @@ include('Contact.class.php');
               .$this->getTelephoneAr() . " "
               .$this->getAdresseAr() . " "
               .$this->getEmailAr() . " "
-              .$this->getDescriptionAr() . " "
-              .$this->getLienAr() . " "
-              .$this->getVideoAr() . " "
-              .$this->getImageAr() . " ";
+              .$this->getDescriptionAr() . " ";
       }
       }
 
@@ -65,15 +60,7 @@ include('Contact.class.php');
     function getDescriptionAr() {
       return $this->descriptionAr;
     }
-    function getLienAr() {
-      return $this->lienAr;
-    }
-    function getVideoAr() {
-      return $this->videoAr;
-    }
-    function getImageAr() {
-      return $this->imageAr;
-    }
+  
     }
 
  ?>
