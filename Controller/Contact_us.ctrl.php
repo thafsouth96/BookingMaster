@@ -11,9 +11,24 @@ $email.='florian.ekoue@iut2.upmf-grenoble.fr';
 $objet= 'questions';
 $message=$_POST['message'];
 
-mail($email,$objet,$message,$headers); // envoi un mail à $email
-if (isset($_POST['envoi'])) {
-  echo "Votre email a été envoyé aux administrateurs";
+
+if ((!empty($message)) && (isset($_POST['envoi']))) {
+  mail($email,$objet,$message,$headers); // envoi un mail à $email
+  echo "<script>";
+  echo 'alert("Votre email a été envoyé aux administrateurs")';
+  echo "</script>";
+  echo "<script>";
+  echo 'history.go(-2)';
+  echo "</script>";
+
+} else {
+  echo "<script>";
+  echo 'alert("Votre message est vide")';
+  echo "</script>";
+  echo "<script>";
+  echo 'history.go(-1)';
+  echo "</script>";
+
 }
 
 ?>
