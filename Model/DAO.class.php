@@ -9,6 +9,9 @@
     global $adresse_ip;
     global $id_serveur;
 
+    //construction de l'objet $dao
+    $dao = new DAO();
+
     // Le Data Access Object
     // Il représente la base de donnée
     class DAO {
@@ -38,9 +41,37 @@
          $req2->execute();
          return  $req2->fetchAll(PDO::FETCH_CLASS,"Contact");
        }
-       
+
+
+       /***Fonction de connexion ****/
+        function getLogin(){
+          $rquete1 = "SELECT * FROM personne WHERE pseudo = '{$_POST['login']}'";
+          //var_dump($_POST['pseudo']);
+          $rs =$this->db->query($rquete1);
+          $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Personne');
+          return $rw[0] ;
+
+        }
+        function getPassword() {
+          $rquete2 = "SELECT * FROM personne WHERE password='{$_POST['password']}'";
+          $rs2 = $this->db->query($rquete2);
+          $rw2 = $rs2->fetchAll(PDO::FETCH_CLASS,'Personne');
+          return $rw2[0] ;
+        }
+
+
+        function inscription($pseudo,$psw) {
+            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from personne),$_POST['Pseudo'],$_POST['mot_de_passe'])" ;
+            $sth=$this->db->query($req);
+            $result = $sth->fetchAll(PDO::FETCH_CLASS,'Personne');
+            var_dump($result);
+            return $result[0];
+
+          }
+
+
       }
-    $dao = new DAO(); //construction de l'objet $dao
+
     //var_dump($dao);
 
 

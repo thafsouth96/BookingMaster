@@ -6,20 +6,29 @@ $(document).ready(function() {
 
 	});
 
+
 	$('form #precedant').bind('click', function() {
-
-
+		//$('#content').load('../View/inscriptionEtape1.view.html') ;
+		alert("ça marche"); 
 	});
-	$('form #precedant').bind('click', function() {
-		$('body div').load('../View/inscriptionEtape1.view.html') ;
+
+	$('form #reset').bind('click', function() {
+
+			if(confirm("Voulez vous réinitialiser tous les champs")){
+				resetIns();
+			}
 
 	});
 
 });
 
-function reset(){
-
-	
+function resetIns(){
+	$('#nom').val("");
+	$('#prenom').val("");
+	$('#dateNaiss').val("");
+	$('#adresse').val("");
+	$('#password').val("") ;
+	$('#passwordConfirm').val("");
 }
 
 
@@ -28,6 +37,7 @@ function verifierEtape1() {
 	if ($('#nom').val() === ""){
 		alert('Saisir le nom');
 		$('#nom').focus();
+
 	return false ;
 	 }
 
