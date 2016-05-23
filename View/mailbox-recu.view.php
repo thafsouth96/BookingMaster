@@ -17,7 +17,7 @@
     <a href="mailbox-recu.view.php">Boite de réception</a>
     <a href="mailbox-inde.view.php">Indésirables</a>
     <a href="#">Envoyé</a>
-    <a href="#">Brouillons</a>
+    <a href="mailbox-broul.view.php">Brouillons</a>
     <a href="#">Courbeille</a>
   </div>
   <div class="messages">
@@ -41,7 +41,7 @@
 
   //          global $Mail;
 
-  //            foreach ($Mail as $key => $value) {// parcourt de chaque articles
+  //            foreach ($Mail as $key => $value) {
   //                echo "<p>";
   //                echo $value;
   //                echo "</p>";
