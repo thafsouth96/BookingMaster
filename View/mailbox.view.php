@@ -2,29 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="Design/ajouterContact.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="mailbox.css" media="screen" charset="utf-8">
     <title>bookMaster</title>
   </head>
   <body>
-   <div id="logo">
-      <img src="../Data/logo1.png">
-    </div>
-<div id="menuG">
-  <a href="ajouterContact.view.php">Ajouter un artiste</a><br>
-  <a href="#">Mes contacts</a><br>
-  <a href="calendrier.view.php">Mon calendrier</a><br>
-  <a href="#">Mes notes</a><br>
-  <a href="#">Paramétres</a><br>
-  <a href="#">Déconnexion</a>
-</div>
-    <div id='menuHdroit'>
-    <ul>
-      <li><img src="../Data/home_w.png" width="30">
-      <li><img src="../Data/bell.png" width="30">
-      <li><img src="../Data/ecriremsg.jpg" width="30">
 
-    </ul>
+<header>
+  <h1>messages</h1>
+</header>
+
+<div class="mailbox">
+  <div class="nav">
+    <a href="mailbox.view.php">Nouveau</a>
+    <a href="mailbox-recu.view.php">Boite de réception</a>
+    <a href="#">Indésirables</a>
+    <a href="#">Envoyé</a>
+    <a href="#">Brouillons</a>
+    <a href="#">Courbeille</a>
   </div>
+  <div class="messages">
+    <input name="search" placeholder="search" />
+    <div class="actions-dropdown">
+      <label>actions <span>▼</span></label>
+      <ul>
+        <li>Ranger</li>
+        <li>Déplacer vers</li>
+        <li>Supprimer</li>
+      </ul>
+    </div>
+
     <h1> MESSAGE</h1>
     <div id="formulaire">
 
@@ -40,20 +46,7 @@
 
       	<input type="submit" name="envoi" value="Envoyer" /></div>
       </form>
-
-
-
-<footer>
-  <div id='menuFooter'>
-  <ul>
-
-     <li><a href='#'><span>About</span></a></li>
-     <li><a href='#'><span>Help</span></a></li>
-     <li><a href="../View/Contact_us.view.php"><span>Contact us</span></a></li>
-  </ul>
-</footer>
-<div id="logo2">
-  <img src="../Data/logo1.png">
+  </div>
 </div>
-  </body>
+</body>
 </html>
