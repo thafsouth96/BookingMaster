@@ -14,8 +14,8 @@
 <div class="mailbox">
   <div class="nav">
     <a href="mailbox.view.php">Nouveau</a>
-    <a href="#" class="active">Boite de réception</a>
-    <a href="#">Indésirables</a>
+    <a href="mailbox-recu.view.php">Boite de réception</a>
+    <a href="mailbox-inde.view.php">Indésirables</a>
     <a href="#">Envoyé</a>
     <a href="#">Brouillons</a>
     <a href="#">Courbeille</a>
@@ -33,7 +33,7 @@
 
     <div class="message">
       <input type="checkbox" />
-      <span class="sender">T-Ara</span>
+      <span class="sender">Justin </span>
       <span class="date">aujourd'hui</span>
       <span class="title">Question</span>
     </div>
@@ -50,42 +50,42 @@
           ?>
     <div class="message">
       <input type="checkbox" />
-      <span class="sender">Black M</span>
+      <span class="sender">Renée</span>
       <span class="date">aujourd'hui</span>
       <span class="title">Question</span>
     </div>
 
     <div class="message">
       <input type="checkbox" />
-      <span class="sender">Black M</span>
+      <span class="sender">Jacque</span>
       <span class="date">aujourd'hui</span>
       <span class="title">Question</span>
     </div>
 
     <div class="message">
       <input type="checkbox" />
-      <span class="sender">113</span>
+      <span class="sender">Céline Dion</span>
       <span class="date">aujourd'hui</span>
       <span class="title">Question</span>
     </div>
 
     <div class="message">
       <input type="checkbox" />
-      <span class="sender">BigBang</span>
+      <span class="sender">Lorie</span>
       <span class="date">aujourd'hui</span>
       <span class="title">Question</span>
     </div>
 
     <div class="message">
       <input type="checkbox" />
-      <span class="sender">AfterSchool</span>
+      <span class="sender">Renaud</span>
       <span class="date">aujourd'hui</span>
       <span class="title">Question</span>
     </div>
 
     <div class="message">
       <input type="checkbox" />
-      <span class="sender">Sexion d'assault</span>
+      <span class="sender">Kev Adams</span>
       <span class="date">aujourd'hui</span>
       <span class="title">Question</span>
     </div>
