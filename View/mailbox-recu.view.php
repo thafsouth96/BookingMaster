@@ -41,7 +41,7 @@
 
   //          global $Mail;
 
-  //            foreach ($Mail as $key => $value) {// parcourt de chaque articles
+  //            foreach ($Mail as $key => $value) {
   //                echo "<p>";
   //                echo $value;
   //                echo "</p>";
