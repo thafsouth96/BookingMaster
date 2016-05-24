@@ -193,4 +193,19 @@ function modifierNomE($idE){
 		return $result;
 	}
   */
+  fonction messagerie
+  */
+ /*function BoiteRecep() { // affiche les mail contenus dans la boite de reception
+        $rquete1 = "SELECT idExpediteur,objet,message FROM message'";
+          //var_dump($rquete1) ;
+          $rs =$this->db->query($rquete1);
+          $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
+         }
+*/
+  //function MailEnvoye() {
+   // $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE dateEnvoi > NOW()";
+      //var_dump($rquete1) ;
+   //   $rs =$this->db->query($rquete1);
+    //  $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
+  //}
     ?>
