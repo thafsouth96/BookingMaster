@@ -1,13 +1,6 @@
 <?php
 
 
-
-    global $ref;
-    global $libelle;
-    global $prix;
-    global $adresse_ip;
-    global $id_serveur;
-
     //construction de l'objet $dao
     $dao = new DAO();
 
@@ -193,7 +186,8 @@ function modifierNomE($idE){
 		return $result;
 	}
   */
-  fonction messagerie
+ /*
+ fonction messagerie
   */
  /*function BoiteRecep() { // affiche les mail contenus dans la boite de reception
         $rquete1 = "SELECT idExpediteur,objet,message FROM message'";
@@ -202,10 +196,17 @@ function modifierNomE($idE){
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
          }
 */
-  //function MailEnvoye() {
-   // $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE dateEnvoi > NOW()";
+  /*function MailEnvoye() {
+    $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE dateEnvoi > NOW()";
       //var_dump($rquete1) ;
-   //   $rs =$this->db->query($rquete1);
-    //  $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
-  //}
+      $rs =$this->db->query($rquete1);
+      $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
+  }*/
+/*  function MailBrouillon() {
+    $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE estBrouillon = "TRUE"";
+      //var_dump($rquete1) ;
+      $rs =$this->db->query($rquete1);
+      $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
+  }
+ }
     ?>
