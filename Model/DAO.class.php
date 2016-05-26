@@ -68,7 +68,7 @@
 
         }
 
-
+*/
       }
 
     //var_dump($dao);*/
@@ -190,9 +190,7 @@ function modifierNomE($idE){
 		return $result;
 	}
   */
-<<<<<<< HEAD
-}
-=======
+
  /*
  fonction messagerie
   */
@@ -216,5 +214,5 @@ function modifierNomE($idE){
       $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
   }
  }
->>>>>>> e117438d9144a7882b0c73fa004e2ca5dd0882c1
+ */
     ?>
