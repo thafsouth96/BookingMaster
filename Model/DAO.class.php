@@ -22,7 +22,8 @@
         function __construct() {
             try {
                 $this->db = new PDO($this->database);
-                var_dump($this->db);
+                //
+              //  var_dump($this->db);
             } catch (Exception $e) {
                 die ("Error : $e");
             }
@@ -50,31 +51,34 @@
           //var_dump($rquete1) ;
           $rs =$this->db->query($rquete1);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Booker');
+          if($rw != NULL) {
           return $rw[0] ;
-
+          }
+          else return NULL ;
         }
         /** Retourne l'id du booker à partir du mot de passe entré ***/
         function getPasswordBooker($mdp) {
           $rquete2 = "SELECT * FROM booker WHERE mdp ='$mdp'";
           $rs2 = $this->db->query($rquete2);
-
           $rw2 = $rs2->fetchAll(PDO::FETCH_CLASS,'Booker');
+          if($rw2 != NULL) {
           return $rw2[0] ;
+          }
+          else return NULL ;
         }
 
-
-        function inscription($nom,$prenom,$dateNaiss,$mail,$mdp) {
+        /*function inscription($nom,$prenom,$dateNaiss,$mail,$mdp) {
             $req = "INSERT INTO personne values ((SELECT count(*) + 1 from booker),$nom,$prenom,$dateNaiss,$mail,$mdp)" ;
             $sth=$this->db->query($req);
             $result = $sth->fetchAll(PDO::FETCH_CLASS,'Booker');
-            return $result[0];
+            return $result;
 
         }
 
 
       }
 
-    //var_dump($dao);
+    //var_dump($dao);*/
 
 /*--------------------------------GESTION DES EVENEMENTS-------------------------------------*/
 /*
@@ -193,4 +197,5 @@ function modifierNomE($idE){
 		return $result;
 	}
   */
+}
     ?>
