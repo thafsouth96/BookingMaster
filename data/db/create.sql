@@ -27,17 +27,10 @@ CREATE TABLE organisateurs (
           telephoneO TEXT  /* telephone de l'organisateur */
 );
 
-CREATE TABLE groupeM (
+CREATE TABLE groupeMusical (
         idGM TEXT PRIMARY KEY, /* identifiant pour + facilité si gestion groupe */
         nomGM TEXT , /* nom du groupe */
         descriptionGM TEXT /* description  du groupe */
-);
-
-CREATE TABLE groupeC (
-          idB TEXT REFERENCES booker(idB),
-          nomGC TEXT,
-          descriptionGC TEXT,
-          PRIMARY KEY (idb,nomGC)
 );
 
 
@@ -61,7 +54,7 @@ CREATE TABLE message (
       PRIMARY KEY (idExpediteur,idDestinataire,dateEnvoi)
 );
 
-CREATE TABLE faitPartieAGM ( /* association entre les artistes et leur groupe */
+CREATE TABLE artiste_groupeMusical ( /* association entre les artistes et leur groupe */
           idAr TEXT, /* id de l'artiste */
           idGM TEXT,/* id du groupe */
           PRIMARY KEY(idAr,idGM), /* clés primaires inséparables */
@@ -70,12 +63,27 @@ CREATE TABLE faitPartieAGM ( /* association entre les artistes et leur groupe */
 );
 
 
+CREATE TABLE contacts ( /* association entre les bookers et les artistes pour afficher les artistes des bookers */
+          idB TEXT, /* id du booker */
+          idGM TEXT,/* id du groupe musical */
+          PRIMARY KEY(idB,idGM), /* clés primaires inséparables */
+          FOREIGN KEY(idB) REFERENCES booker(idB), /* références aux attributs des classes booker et artiste */
+          FOREIGN KEY(idGM) REFERENCES artiste(idGM)
+);
 
-CREATE TABLE faitPartieAGC (
-          idGM TEXT REFERENCES groupeM(idGM),
+CREATE TABLE groupeContact (
           idB TEXT REFERENCES booker(idB),
-          nomGC TEXT REFERENCES groupeC(nomGC),
-          PRIMARY KEY (idGM,idB,nomGC)
+          nomGC TEXT,
+          descriptionGC TEXT,
+          PRIMARY KEY (idb,nomGC)
+);
+
+CREATE TABLE groupeContact_groupeMusical (
+          idB TEXT,
+          nomGC TEXT,
+          idGM TEXT REFERENCES groupeMusical(idGM),
+          PRIMARY KEY (idB,nomGC,idGM),
+          FOREIGN KEY (idB,nomGC) REFERENCES groupeContact(idB,nomGC)
 );
 
 CREATE TABLE organisateur_evenement ( /* association entre les organisateurs et les evenements pour afficher les organisateurs liés aux évènements */
@@ -85,25 +93,20 @@ CREATE TABLE organisateur_evenement ( /* association entre les organisateurs et 
           FOREIGN KEY(idO) REFERENCES organisateurs(idO), /* références aux attributs des classes organisateur et evenements */
           FOREIGN KEY(idE) REFERENCES evenements(idE)
 );
-CREATE TABLE participeArtiste (
-          idAr TEXT, /* id de l'artiste */
+
+
+CREATE TABLE booker_evenement (
+          idB TEXT, /* id du booker */
           idE TEXT, /* id de l'évènement */
-          PRIMARY KEY(idAr,idE), /* clés primaires inséparables */
-          FOREIGN KEY(idAr) REFERENCES artiste(idAr),
-          FOREIGN KEY(idE) REFERENCES evenements(idE)
-);
-CREATE TABLE participeGoupe (
-          idG TEXT, /* id du groupe */
-          idE TEXT, /* id de l'évènement */
-          PRIMARY KEY(idG,idE), /* clés primaires inséparables */
-          FOREIGN KEY(idG) REFERENCES groupe(idG),
+          PRIMARY KEY(idB,idE), /* clés primaires inséparables */
+          FOREIGN KEY(idB) REFERENCES booker(idB),
           FOREIGN KEY(idE) REFERENCES evenements(idE)
 );
 
-CREATE TABLE contacts ( /* association entre les bookers et les artistes pour afficher les artistes des bookers */
-          idB TEXT, /* id du booker */
-          idGM TEXT,/* id du groupe musical */
-          PRIMARY KEY(idB,idGM), /* clés primaires inséparables */
-          FOREIGN KEY(idB) REFERENCES booker(idB), /* références aux attributs des classes booker et artiste */
-          FOREIGN KEY(idGM) REFERENCES artiste(idGM)
+CREATE TABLE goupeMusical_Evenement (
+          idGM TEXT, /* id du groupe */
+          idE TEXT, /* id de l'évènement */
+          PRIMARY KEY(idGM,idE), /* clés primaires inséparables */
+          FOREIGN KEY(idGM) REFERENCES groupeMusical(idGM),
+          FOREIGN KEY(idE) REFERENCES evenements(idE)
 );
