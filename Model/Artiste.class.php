@@ -15,23 +15,17 @@ include('Contact.class.php');
 //      public $ajoutG; // ajout groupe
 
         public $idAr;  //Id  de l'artiste
-        public $nomAr;  //nom de l'artiste
         public $prenomAr; /* prenom de l'artiste */
         public $roleAr; /* role de l'artiste */
-        public $telephoneAr; /* telephone de l'artiste */
         public $adresseAr; /* adresse de l'artiste */
-        public $emailAr; /*email de l'artiste */
         public $descriptionAr; //description courte de l'artiste
 
       public function __toString() {
         return $this->getIdAr() . " "
-              .$this->getNomAr() . " "
               .$this->getPrenomAr() . " "
               .$this->getRoleAr() . " "
-              .$this->getTelephoneAr() . " "
               .$this->getAdresseAr() . " "
-              .$this->getEmailAr() . " "
-              .$this->getDescriptionAr() . " ";
+              .$this->getDescriptionAr() . " ". parent::__toString();
       }
       }
 
@@ -60,7 +54,7 @@ include('Contact.class.php');
     function getDescriptionAr() {
       return $this->descriptionAr;
     }
-  
+
     }
 
  ?>
