@@ -264,6 +264,18 @@
       return $result;
   }
 
+  public function getMessagesEnvoyes($idPers){
+
+    $query = "SELECT idExpediteur, a.nom as destinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idExpediteur=$idPers and m.idDestinataire=a.idPers union SELECT idExpediteur, g.nom as destinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idExpediteur=$idPers and m.idDestinataire=g.idPers";
+    try {
+    $req = $this->db->query($query);
+    $result=$req->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      die("PDO Error : ".$e->getMessage());
+    }
+      return $result;
+  }
+
  /*
  fonction messagerie
   */
