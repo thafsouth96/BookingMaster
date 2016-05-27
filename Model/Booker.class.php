@@ -1,4 +1,6 @@
 <?php
+
+include('Personne.class.php');
     // Un booker
     class Booker extends Personne{
       private $prenomB; /* nom du booker */

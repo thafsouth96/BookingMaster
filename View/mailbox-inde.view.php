@@ -26,7 +26,14 @@
       <label>actions <span>▼</span></label>
       <ul>
         <li>Ranger</li>
-        <li>Déplacer vers</li>
+        <li>Déplacer vers
+          <div class="ssMenu">
+            <ul>
+              <li>Indésirables</li>
+              <li>Corbeille</li>
+            </ul>
+          </div>
+        </li>
         <li>Supprimer</li>
       </ul>
     </div>

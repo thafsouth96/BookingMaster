@@ -21,9 +21,10 @@
                   if ($Booker1 == $Booker2) {
 
                       session_start();
-                      $_SESSION['id'] = $Booker1->idB ;
+                      $_SESSION['id'] = $Booker1->idPers() ;
+                      //var_dump($Booker1->idPers());
 
-                      include_once('../View/tableauBord.view.php');
+                      include_once('../Controller/tableauBord.ctrl.php');
                   }
                   else if ($Booker1 != $Booker2){
                     echo "<script> alert(\"Le mot de passe ou le pseudo que vous avez saisi est incorrect. Veuillez r\u00e8essayer\") </script>";
@@ -36,7 +37,7 @@
                     include_once("../View/connexion.view.html");
                   }
             }
-    
+
 
 
 ?>

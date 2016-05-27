@@ -1,8 +1,8 @@
 <?php
     // Un booker
-    class Booker {
+    class Message {
       private $idExpediteur;  /* id de l'expediteur */
-      private $idDestinateur; /* id de destinateur */
+      private $idDestinataire; /* id de destinataire */
       private $dateEnvoi;/* date d'envoi */
       private $objet; /* objet du mail*/
       private $message; /* message du mail*/
@@ -12,7 +12,7 @@
 
       function __toString() {
         return $this->idExpediteur() . " "
-              .$this->idDestinateur() . " "
+              .$this->idDestinataire() . " "
               .$this->dateEnvoi() . " "
               .$this->objet() . " "
               .$this->message() . " "
@@ -24,7 +24,7 @@
        function idExpedinateur() {
          return $this->idExpedinateur;
        }
-       function idDestinateur() {
+       function idDestinataire() {
          return $this->idDestinataire;
        }
        function dateEnvoi() {

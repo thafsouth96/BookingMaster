@@ -5,10 +5,10 @@
        */
       class Personne
       {
-        private $idPers
-        private $nom; // nom du Contact
-        private $email; // email du Contact
-        private $telephone; // telephone du Contact
+        protected $idPers;
+        protected $nom; // nom du Contact
+        protected $email; // email du Contact
+        protected $telephone; // telephone du Contact
 
 
         public function __toString() {

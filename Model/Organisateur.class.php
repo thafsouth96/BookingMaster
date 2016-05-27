@@ -1,5 +1,5 @@
 <?php
-include('Contact.class.php');
+include('Personne.class.php');
 
     class organisateur extends Personne {
         //Id  de l'organisateur
