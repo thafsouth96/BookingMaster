@@ -4,7 +4,7 @@
 <h1> Resultat de Recherche </h1>
 
 <div id="Music"> Style musical
-	<select id="Musical" name="select">
+	<select id="Musical" name="selectM">
 		<option selected disabled>Selectionner..</option>
 		<option value="valeur1">Rock</option>
 		<option value="valeur2">Pop</option>
@@ -13,7 +13,7 @@
 </div>
 
 <div id="Pays"> Pays
-	<select id="Pays" name="select">
+	<select id="Pays" name="selectP">
 		<option selected disabled>Selectionner..</option>
 		<option value="valeur1">France</option>
 		<option value="valeur2">Grande-Bretagne</option>
@@ -22,7 +22,7 @@
 </div>
 
 <div id="Region"> Region
-	<select id="Region" name="select">
+	<select id="Region" name="selectR">
 		<option selected disabled>Selectionner..</option>
 		<option value="valeur1">Rhones-alpes</option>
 		<option value="valeur2"></option>
@@ -37,6 +37,12 @@
 		<option value="valeur2">Lyon</option>
 		<option value="valeur3">Saint-Etienne</option>
 	</select>
+</div>
+
+<div id="Rech">
+	<form action="../Controller/rechercheArtiste.ctlr.php" method="GET">
+	<input type="texte" name="rech" autofocus/>
+	<input type="submit" name="action" value="Rechercher" />
 </div>
 
 <div id="Artists">
