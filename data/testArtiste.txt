@@ -1,6 +1,6 @@
-1A|Lennon|John|Chanteur|0611111111|john.lennon@gmail.com|voici une description
-2A|McCartney|Paul|Pianiste|0602548596|paul.mccartney@gmail.com|voici une description
-3A|Harrison|George|Musicien|0123456789|george.harrison@gmail.com|voici une description
-4A|Starr|Ringo|Musicien|0622354762|ringo.starr@gmail.com|voici une description
-5A|Brassens|Georges|Chanteur|0475558462|georges.brassens@gmail.com|voici une description
-6A|Séchan|Renaud|Chanteur|0622334455|renaud.sechan@gmail.com|voici une description
+1|Lennon|john.lennon@gmail.com|0611111111|John|01-01-1900|Chanteur|Grenoble|voici une description|Rock
+2|McCartney|paul.mccartney@gmail.com|0602548596|Paul|01-01-1900|Pianiste|Grenoble|voici une description|Rock
+3|Harrison|george.harrison@gmail.com|0123456789|George|01-01-1900|Musicien|Grenoble|voici une description|Rock
+4|Starr|ringo.starr@gmail.com|0622354762|Ringo|01-01-1900|Musicien|Grenoble|voici une description|Rock
+5|Brassens|georges.brassens@gmail.com|0475558462|Georges|01-01-1900|Chanteur|Grenoble|voici une description|Variété
+6|Séchan|renaud.sechan@gmail.com|0622334455|Renaud|01-01-1900|Chanteur|Grenoble|voici une description|Variété

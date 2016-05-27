@@ -9,9 +9,9 @@
       public $logo; // logo de l'evenement
 
       function __toString() {
-        return $this->getLogo() . " ";
+        return $this->logo() . " ";
       }
-      function getLogo() {
+      function logo() {
         return $this->logo;
       }
     }

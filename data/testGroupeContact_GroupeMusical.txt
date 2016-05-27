@@ -1,3 +1,3 @@
-1B|Mes artistes solo|2GM
-1B|Mes artistes solo|3GM
-2B|Mes groupes|1GM
+7|Mes artistes solo|14
+7|Mes artistes solo|15
+8|Mes groupes|13

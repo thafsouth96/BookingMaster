@@ -1,25 +1,25 @@
 <?php
 
     class GroupeC {
-        public $idB;  //Id du groupe
-        public $nomGM; /* nom du groupe */
-        public $descriptionGM; /* description longue du groupe */
+        public $idGC;  //Id du groupe
+        public $nomGC; /* nom du groupe */
+        public $descriptionGC; /* description longue du groupe */
 
         function __toString() {
-          return $this->getIdB() . " "
-                .$this->getNomGM() . " "
-                .$this->getDescriptionGM() . " ";
+          return $this->idGC() . " "
+                .$this->nomGC() . " "
+                .$this->descriptionGC() . " ";
 
         }
           // Fonctions getter
-       function getIdGB() {
+       function idGC() {
          return $this->idGB;
        }
-       function getNomGM() {
-         return $this->nomGM;
+       function nomGC() {
+         return $this->nomGC;
        }
-       function getDescriptionGM() {
-         return $this->descriptionGM;
+       function descriptionGC() {
+         return $this->descriptionGC;
        }
 
   }
