@@ -18,7 +18,7 @@
       <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
       <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
 
-      
+
       <div id="menuNav" >
       <script type="text/javascript" src="../js/menu.js"></script>
       <?php
@@ -68,6 +68,19 @@
       <tr id = "enteteMessagerie">
         <td>Boite de réception</td><td>Messages envoyés</td><td>Brouillons</td>
       </tr>
+      <tr id = "libelleMessagerie">
+        <td>Expediteur</td><td>Objet</td>
+      </tr>
+      <?php
+          //global $messagesRecus;
+          //global $Booker1;
+          foreach ($messagesRecus as $value){
+            echo '<tr>';
+                echo '<td>', $value['expediteur'], '</td>', '<td>', $value['objet'], '</td>';
+            echo '</tr>';
+          }
+
+      ?>
     </table>
   </div>
 

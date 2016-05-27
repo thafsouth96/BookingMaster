@@ -1,4 +1,5 @@
 <?php
+include('Personne.class.php');
 
     class GroupeM extends Personne {
         private $descriptionGM; /* description du groupe */

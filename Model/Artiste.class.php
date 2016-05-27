@@ -1,6 +1,6 @@
 <?php
 
-include('Contact.class.php');
+include('Personne.class.php');
     /**
      * Un Arti ste est un type de personne -->Un Artiste herite des attribut de Contact
      * attributs : nom, email ,telephone

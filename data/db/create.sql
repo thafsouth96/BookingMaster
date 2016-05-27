@@ -5,10 +5,10 @@ CREATE TABLE id_datatype (
 );
 
 CREATE TABLE booker (
-          idB TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion bookers */
-          nomB TEXT, /* nom du booker */
-          mailB TEXT,
-          telephoneB TEXT,
+          idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion bookers */
+          nom TEXT, /* nom du booker */
+          email TEXT,
+          telephone TEXT,
           prenomB TEXT,
           dateNaissB date,
           mdp TEXT,
@@ -17,10 +17,10 @@ CREATE TABLE booker (
 );
 
 CREATE TABLE artiste (
-          idAr TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion artistes */
-          nomAr TEXT , /* nom de l'artiste */
-          emailAr TEXT , /* email de l'artiste */
-          telephoneAr TEXT, /* telephone de l'artiste */
+          idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion artistes */
+          nom TEXT , /* nom de l'artiste */
+          email TEXT , /* email de l'artiste */
+          telephone TEXT, /* telephone de l'artiste */
           prenomAr TEXT , /* prenom de l'artiste */
           dateNaissAr date,
           roleAr TEXT , /* role de l'artiste */
@@ -30,17 +30,17 @@ CREATE TABLE artiste (
 );
 
 CREATE TABLE organisateur (
-          idO TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion organisateurs */
-          nomO TEXT , /*nom de l'organisateur*/
-          emailO TEXT , /* email de l'organisateur */
-          telephoneO TEXT  /* telephone de l'organisateur */
+          idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion organisateurs */
+          nom TEXT , /*nom de l'organisateur*/
+          email TEXT , /* email de l'organisateur */
+          telephone TEXT  /* telephone de l'organisateur */
 );
 
 CREATE TABLE groupeMusical (
-        idGM TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion groupe */
-        nomGM TEXT , /* nom du groupe */
-        emailGM TEXT,
-        telephoneGM TEXT,
+        idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion groupe */
+        nom TEXT , /* nom du groupe */
+        email TEXT,
+        telephone TEXT,
         descriptionGM TEXT, /* description  du groupe */
         mdpGM TEXT,
         styleMusicalGM TEXT

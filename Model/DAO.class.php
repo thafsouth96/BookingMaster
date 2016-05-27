@@ -40,9 +40,10 @@
 
        /****Retourne id du booker à partir de son mail******/
         function getMailBooker($mail){
-          $rquete1 = "SELECT * FROM booker WHERE mailB = '$mail'";
+          $rquete1 = "SELECT * FROM booker WHERE email = '$mail'";
           //var_dump($rquete1) ;
           $rs =$this->db->query($rquete1);
+          //var_dump($rs);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Booker');
           if($rw != NULL) {
           return $rw[0] ;
@@ -74,13 +75,13 @@
 /*--------------------------------GESTION DES EVENEMENTS-------------------------------------*/
 
 
-	public function select_instance($idE,$nomE,$dateE,$lieuE) {S
+	/*public function select_instance($idE,$nomE,$dateE,$lieuE) {
 		$query = "SELECT * FROM evenement";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
 		$query .= " AND dateE='".$dateE."' AND lieuE='".$lieuE."'";
-	
-		$stmt = $this->db->prepare($query);
 
+		$stmt = $this->db->prepare($query);*
+}
   function select_instance($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$SimageE) {
 		$query = "SELECT * FROM evenements ";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
@@ -91,10 +92,10 @@
     	$stmt->execute();
 
     	$result = $stmt->fetch(PDO::FETCH_BOTH);
-  
+
     	$instance = new evenement($result[0],$result[1],$result[2],$result[3]);
 		return $instance;
-	}
+	}*/
 
 	public function creerEvenement($idE,$nomE,$dateE,$lieuE){
 		$query = "INSERT INTO evenements VALUES($idE,$nomE,$dateE,$lieuE)";
@@ -109,7 +110,7 @@
 	}
 
 
-	public function supprimerEvenement($idE,$nomE,$dateE,$lieuE){	
+	public function supprimerEvenement($idE,$nomE,$dateE,$lieuE){
 		$query = "DELETE FROM evenement";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
 		$query .= " AND dateE='".$dateE."' AND lieuE='".$lieuE."'";
@@ -125,7 +126,7 @@
 	}
 
 
-	public function modifierNomE($idE){	
+	public function modifierNomE($idE){
 		$query = "UPDATE evenement ";
 		$query .= " SET nomE='".$nomE."' WHERE idE='".$idE."'";
 		try{
@@ -140,7 +141,7 @@
 	}
 
 
-	public function modifierDateE($idE){	
+	public function modifierDateE($idE){
 		$query = "UPDATE evenement";
 		$query .= " SET dateE='".$dateE."' WHERE idE='".$idE."'";
 		try{
@@ -155,7 +156,7 @@
 	}
 
 
-	public function modifierLieuE($idE){	
+	public function modifierLieuE($idE){
 		$query = "UPDATE evenement";
 		$query .= " SET lieuE='".$lieuE."' WHERE idE='".$idE."'";
 		$query = "UPDATE ".$this->table;
@@ -186,7 +187,7 @@
         return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
 	}
 
-	public function supprimerIdO($idE,$idO){	
+	public function supprimerIdO($idE,$idO){
 		$query = "UPDATE organisateur_evenement";
 		$query .= "SET idO='".$idO."' WHERE idE='".$idE."'";
 		$query = "UPDATE ".$this->table;
@@ -211,7 +212,7 @@
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
@@ -222,7 +223,7 @@
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
@@ -233,7 +234,7 @@
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
@@ -244,12 +245,24 @@
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
 
+/*--------------------------------GESTION DE RECHERCHE D'ARTISTESs-------------------------------------*/
 
+  public function getMessagesRecus($idPers){
+
+    $query = "SELECT a.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idDestinataire=$idPers and m.idExpediteur=a.idPers union SELECT g.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idDestinataire=$idPers and m.idExpediteur=g.idPers";
+    try {
+    $req = $this->db->query($query);
+    $result=$req->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      die("PDO Error : ".$e->getMessage());
+    }
+      return $result;
+  }
 
  /*
  fonction messagerie
@@ -274,4 +287,4 @@ function MailBrouillon() {
       $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
   }*/
 
-    ?>
+}    ?>

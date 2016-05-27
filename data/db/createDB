@@ -1,0 +1,13 @@
+.read create.sql
+.separator |
+.import ../testId_datatype.txt id_datatype
+.import ../testBooker.txt booker
+.import ../testArtiste.txt artiste
+.import ../testOrganisateur.txt organisateur
+.import ../testGroupeMusical.txt groupeMusical
+.import ../testEvenement.txt evenement
+.import ../testMessage.txt message
+.import ../testArtisteGroupeMusical.txt artiste_groupeMusical
+.import ../testContacts.txt booker_contacts
+.import ../testGroupeContact.txt groupeContact
+.import ../testGroupeContact_GroupeMusical.txt groupeContact_groupeMusical
