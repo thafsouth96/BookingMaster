@@ -42,10 +42,19 @@
 <div id="Rech">
 	<form action="../Controller/rechercheArtiste.ctlr.php" method="GET">
 	<input type="texte" name="rech" autofocus/>
-	<input type="submit" name="action" value="Rechercher" />
+	<input type="submit" name="action" value="Rechercher onclick="dssds" />
 </div>
 
-<div id="Artists">
 
-	<input type="button" name="profil" value="Voir Profil">
-</div>
+<?php
+	
+	foreach($artists as $artist)
+	<div id="Artists">
+		$artist->getPrenomAr();
+		$artist->getNomAr();
+		
+
+		//affichage du profil d'artiste<form action="../Controller/.php" method="GET">
+		<input type="button" name="profil" value="Voir Profil">
+	</div>
+?>
