@@ -1,33 +1,24 @@
 <?php
     // Un booker
-    class Booker {
-      public $idB;  /* identifiant pour + facilité si gestion bookers */
-      public $nomB; /* nom du booker */
-      public $dateNaissB;/* date de naissance sur le booker */
-      public $mailB; /* mail du booker */
-      public $mdp;  /* mot de passe du booker pour se log(taille minimum de 8 caractères) */
+    class Booker extends Personne{
+      private $prenomB; /* nom du booker */
+      private $dateNaissB;/* date de naissance sur le booker */
+      private $mdp;  /* mot de passe du booker pour se log(taille minimum de 8 caractères) */
 
       function __toString() {
-        return $this->getIdB() . " "
-              .$this->getNomB() . " "
-              .$this->getdateNaissB() . " "
-              .$this->getmailB() . " "
-              .$this->getMdp() . " ";
+        return parent::__toString() . " "
+              .$this->prenomB() . " "
+              .$this->dateNaissB() . " "
+              .$this->mdp() . " ";
       }
        // Fonctions getter
-       function getIdB() {
-         return $this->idB;
+       function prenomB() {
+         return $this->prenomB;
        }
-       function getNomB() {
-         return $this->nomB;
-       }
-       function getdateNaissB() {
+       function dateNaissB() {
          return $this->dateNaissB;
        }
-       function getmailB() {
-         return $this->mailB;
-       }
-       function getMdp() {
+       function mdp() {
          return $this->mdp;
        }
 

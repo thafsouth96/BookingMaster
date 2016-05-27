@@ -6,7 +6,7 @@ include('Contact.class.php');
      * attributs : nom, email ,telephone
      */
 
-    class Artiste extends Contact
+    class Artiste extends Personne
     {
 //      public $nomG; //nom du groupe (facultatif)
 //      public $description; // la description de l'artiste
@@ -14,44 +14,37 @@ include('Contact.class.php');
 //      public $autre; // champs autre
 //      public $ajoutG; // ajout groupe
 
-        public $idAr;  //Id  de l'artiste
-        public $prenomAr; /* prenom de l'artiste */
-        public $roleAr; /* role de l'artiste */
-        public $adresseAr; /* adresse de l'artiste */
-        public $descriptionAr; //description courte de l'artiste
+
+        private $prenomAr; /* prenom de l'artiste */
+        private $dateNaissAr;
+        private $roleAr; /* role de l'artiste */
+        private $adresseAr; /* adresse de l'artiste */
+        private $descriptionAr; //description courte de l'artiste
 
       public function __toString() {
-        return $this->getIdAr() . " "
-              .$this->getPrenomAr() . " "
-              .$this->getRoleAr() . " "
-              .$this->getAdresseAr() . " "
-              .$this->getDescriptionAr() . " ". parent::__toString();
-      }
+        return parent::__toString() . " "
+              .$this->prenomAr() . " "
+              .$this->dateNaissAr() . " "
+              .$this->roleAr() . " "
+              .$this->adresseAr() . " "
+              .$this->descriptionAr() . " ";
+
       }
 
       // Fonctions getter
-    function getIdAr() {
-      return $this->idAr;
-    }
-    function getNomAr() {
-      return $this->nomAr;
-    }
-    function getPrenomAr() {
+    function prenomAr() {
       return $this->prenomAr;
     }
-    function getRoleAr() {
+    function dateNaissAr() {
+      return $this->dateNaissAr;
+    }
+    function roleAr() {
       return $this->roleAr;
     }
-    function getTelephoneAr() {
-      return $this->telephoneAr;
-    }
-    function getAdresseAr() {
+    function adresseAr() {
       return $this->adresseAr;
     }
-    function getEmailAr() {
-      return $this->emailAr;
-    }
-    function getDescriptionAr() {
+    function descriptionAr() {
       return $this->descriptionAr;
     }
 

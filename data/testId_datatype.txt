@@ -1,0 +1,17 @@
+1|Artiste
+2|Artiste
+3|Artiste
+4|Artiste
+5|Artiste
+6|Artiste
+7|Booker
+8|Booker
+9|Booker
+10|Organisateur
+11|Organisateur
+12|Organisateur
+13|Groupe Musical
+14|Groupe Musical
+15|Groupe Musical
+16|Evenement
+17|Evenement
