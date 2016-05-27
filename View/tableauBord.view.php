@@ -13,14 +13,14 @@
 	  <div id = "barrePrincipale">
 
 
-		  <img id="menu" src="../data/icon/menu.png" alt="menu" width="40" height="40">
+		  <img id="menu" src="../data/icon/MenuNav_icon/menuNav.png" alt="menu" width="40" height="40">
 
 		  <img id="notifications" src="../data/icon/notifiOfficiel.png" alt="notification" width="40">
 		  <a href="../Controller/tableauBord.ctrl.php"> <img id="home" src="../data/icon/home.png" alt="home" width="40"> </a>
 		  <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
 		  <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
 
-		  
+
 		  <div id="menuNav" >
 			  <?php
 				include_once("../Controller/menuNav.ctrl.php");

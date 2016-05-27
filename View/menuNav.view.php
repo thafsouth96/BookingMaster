@@ -7,6 +7,7 @@
   </head-->
   <div id = "menuNav">
       <link rel="stylesheet" href="../css/menuNav.css">
+      
       <?php
       global $htmlNav;
       echo $htmlNav;
