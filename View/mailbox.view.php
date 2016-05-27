@@ -16,20 +16,13 @@
     <a href="mailbox.view.php">Nouveau</a>
     <a href="mailbox-recu.view.php">Boite de réception</a>
     <a href="mailbox-inde.view.php">Indésirables</a>
-    <a href="#">Envoyé</a>
+    <a href="mailbox-envoi.view.php">Envoyé</a>
     <a href="mailbox-broul.view.php">Brouillons</a>
-    <a href="#">Courbeille</a>
+    <a href="mailbox-corbeille.view.php">Corbeille</a>
   </div>
   <div class="messages">
     <input name="search" placeholder="search" />
-    <div class="actions-dropdown">
-      <label>actions <span>▼</span></label>
-      <ul>
-        <li>Ranger</li>
-        <li>Déplacer vers</li>
-        <li>Supprimer</li>
-      </ul>
-    </div>
+
 
     <h1> MESSAGE</h1>
     <div id="formulaire">
@@ -41,10 +34,10 @@
       		<p><label for="cc"></label><input type="text" id="cc" name="cc" placeholder="Autres destinataires" /></p>
 
       		<p><label for="objet"></label><input type="text" id="objet" name="objet" placeholder="Objet" required="required" /></p>
-      		<p><label for="message">Message :</label><textarea id="message" name="message" placeholder="Votre Message" cols="30" rows="8" required="required"></textarea></p>
+      		<p><label for="message"></label><textarea id="message" name="message" placeholder="Votre Message" cols="30" rows="8" required="required"></textarea></p>
       	</fieldset>
 
-      	<input type="submit" name="envoi" value="Envoyer" /></div>
+      	<input type="submit" name="envoi" value="Envoyer" class="btn_vld" /></div>
       </form>
   </div>
 </div>

@@ -2,11 +2,6 @@ body {
   border-color: black;
 }
 
-#menuNav{
-  z-index: 1 ;
-
-}
-
 #barrePrincipale {
   background-color: black;
   height: 50px;
