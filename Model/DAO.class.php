@@ -69,9 +69,11 @@
         }
 
 */
+
+
       }
 
-    //var_dump($dao);*/
+
 
 /*--------------------------------GESTION DES EVENEMENTS-------------------------------------*/
 /*
@@ -200,19 +202,20 @@ function modifierNomE($idE){
           $rs =$this->db->query($rquete1);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
          }
-*/
-  /*function MailEnvoye() {
+
+  function MailEnvoye() {
     $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE dateEnvoi > NOW()";
       //var_dump($rquete1) ;
       $rs =$this->db->query($rquete1);
       $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
-  }*/
-/*  function MailBrouillon() {
+  }
+function MailBrouillon() {
     $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE estBrouillon = "TRUE"";
       //var_dump($rquete1) ;
       $rs =$this->db->query($rquete1);
       $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
   }
- }
- */
+}*/
+
+
     ?>
