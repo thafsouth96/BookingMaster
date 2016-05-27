@@ -1,7 +1,99 @@
-form#coor label { display:inline-block; width:100%; }
-form#coor input {
-   display:inline-block;
+body {
+  border-color: black;
 }
+
+#barrePrincipale {
+  background-color: black;
+  height: 50px;
+  position: fixed;
+  width: 99%;
+}
+
+#barrePrincipale img {
+ padding-left: 5px;
+ padding-top: 5px;
+}
+
+#rechercheAvancee {
+  display:inline;
+  color: white;
+  font-weight: bold;
+  --text-align: center;
+  --vertical-align: middle;
+}
+
+#recherche {
+  vertical-align: top;
+  margin-top: 10px;
+}
+#home, #notifications, #recherche, #rechercheAvancee{
+  float: right;
+  margin-right: 20px;
+}
+#tableauBord {
+  margin-left: auto;
+  margin-right: auto;
+}
+#menuFooter li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+#specs, #publications, #events{
+  display: inline-block;
+  width: 542.5px;
+  height: 675px;
+  border: 3px solid #73AD21;
+}
+
+#pubs {
+  overflow-x : none;
+  overflow-y: auto;
+  border: 3px solid #73AD21;
+  max-height: 605px;
+}
+
+}
+.buttonBlue {
+  /* boutton de connexion */
+   width : 200px ;
+   height : 30px;
+   color : black ;
+   background-color : #5389d6 ; /* blue */
+   font-weight: bold ;
+}
+#btnMsgToGrp *{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#sendMsg{
+  max-width: 100px;
+  height: auto;
+  white-space: normal;
+}
+#btnMsgToGrp h2{
+  margin-left: 75px;
+}
+#specs *{
+  border: 3px solid #73AD21;
+  height: 220px; /* hauteur du parent */
+  white-space: nowrap;
+}
+#albums{
+  overflow-x : none;
+  overflow-y: auto;
+  max-height: 220px;
+  line-height: normal;
+}
+#gallery{
+  overflow-x : auto;
+  overflow-y: none;
+  max-height: 220px;
+  line-height: normal;
+}
+/*
+
 #menuHdroit {
   margin-left: 10%;
   border: solid;
@@ -71,7 +163,7 @@ h1 {
   font-family: 'FontAwesome', sans-serif;
 }
 
-body{
+/*body{
   text-align:center;
 
   background-color:#ebebeb;
@@ -90,14 +182,14 @@ body{
     zoom:1;
 }
 
- /* Form wrapper styling */
+ /* Form wrapper styling
 .search-wrapper {
 width: 240px;
 margin: 45px auto 50px auto;
 
 }
 
-/* Form text input */
+/* Form text input
 
 .search-wrapper input {
 width: 160px;
@@ -138,7 +230,7 @@ border-radius: 5px 0 0 5px;
     font-style: italic;
 }
 
-/* Form submit button */
+/* Form submit button
 .search-wrapper button {
 overflow: visible;
 position: relative;
@@ -192,7 +284,7 @@ transition: all 2.0s linear;
         border-right-color: #c42f2f;
 }
 
-.search-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+.search-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox
     border: 0;
     padding: 0;
 }
@@ -304,6 +396,3 @@ transition: all 2.0s linear;
   box-shadow: inset 0 5px 10px #133e40;
 }
 */
-html {
-  text-align: center;
-}
