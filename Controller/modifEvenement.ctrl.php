@@ -3,9 +3,7 @@ session_start();
 if (!(isset($_GET['modif']) && ($_GET['modif']==1 || $_GET['modif']==0))){
 	require_once(MODELPATH."DAO.class.php");
 
-	$model_dao = new DAO();
-
-	$model_instance = $model_dao->select_instance($_GET['idE'],$_GET['nomE'],$_GET['dateE'],$_GET['lieuE'],$_GET['lienBE'],$_GET['infoE'],$_GET['imageE']);
+	$model_instance = $dao->select_instance($_GET['idE'],$_GET['nomE'],$_GET['dateE'],$_GET['lieuE'],$_GET['lienBE'],$_GET['infoE'],$_GET['imageE']);
 
 	$idE=$_GET['idE'];
 	$nomE=$_GET['nomE'];
@@ -18,8 +16,7 @@ if (!(isset($_GET['modif']) && ($_GET['modif']==1 || $_GET['modif']==0))){
 }	else if($_GET['modif']==0) {
 
 	require_once(MODELPATH."DAO.class.php");
-	$model_dao = new coursDAO();
-	$model_instance = $model_dao->select_instance($_GET['idE'],$_GET['nomE'],$_GET['dateE'],$_GET['lieuE']);
+	$model_instance = $dao->select_instance($_GET['idE'],$_GET['nomE'],$_GET['dateE'],$_GET['lieuE']);
 	$ok=0;
 
 	if(!($_GET['newnomE']== $_GET['nomE'])) {

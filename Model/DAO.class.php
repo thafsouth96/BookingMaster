@@ -40,9 +40,10 @@
 
        /****Retourne id du booker à partir de son mail******/
         function getMailBooker($mail){
-          $rquete1 = "SELECT * FROM booker WHERE mailB = '$mail'";
+          $rquete1 = "SELECT * FROM booker WHERE email = '$mail'";
           //var_dump($rquete1) ;
           $rs =$this->db->query($rquete1);
+          //var_dump($rs);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Booker');
           if($rw != NULL) {
           return $rw[0] ;
@@ -60,7 +61,7 @@
           else return NULL ;
         }
 
-        /*function inscription($nom,$prenom,$dateNaiss,$mail,$mdp) {
+        function inscription($nom,$prenom,$dateNaiss,$mail,$mdp) {
             $req = "INSERT INTO personne values ((SELECT count(*) + 1 from booker),$nom,$prenom,$dateNaiss,$mail,$mdp)" ;
             $sth=$this->db->query($req);
             $result = $sth->fetchAll(PDO::FETCH_CLASS,'Booker');
@@ -68,22 +69,19 @@
 
         }
 
-*/
-      }
 
-    //var_dump($dao);*/
+
 
 /*--------------------------------GESTION DES EVENEMENTS-------------------------------------*/
-<<<<<<< HEAD
 
-	public function select_instance($idE,$nomE,$dateE,$lieuE) {S
+
+	/*public function select_instance($idE,$nomE,$dateE,$lieuE) {
 		$query = "SELECT * FROM evenement";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
 		$query .= " AND dateE='".$dateE."' AND lieuE='".$lieuE."'";
-	
-		$stmt = $this->db->prepare($query);
-=======
-/*
+
+		$stmt = $this->db->prepare($query);*
+}
   function select_instance($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$SimageE) {
 		$query = "SELECT * FROM evenements ";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
@@ -91,28 +89,16 @@
 		$query .= " AND imageE='".$imageE."'";
 
 		$stmt = $this->dbh->prepare($query);
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
-
     	$stmt->execute();
 
     	$result = $stmt->fetch(PDO::FETCH_BOTH);
-<<<<<<< HEAD
-  
+
     	$instance = new evenement($result[0],$result[1],$result[2],$result[3]);
 		return $instance;
-	}
+	}*/
 
 	public function creerEvenement($idE,$nomE,$dateE,$lieuE){
 		$query = "INSERT INTO evenements VALUES($idE,$nomE,$dateE,$lieuE)";
-=======
-
-    	$instance = new evenement($result[0],$result[1],$result[2],$result[3],$result[4],$result[5],$result[6]);
-		return $instance;
-	}
-
- function creerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){
-		$query = "INSERT INTO evenements VALUES $idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE";
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
 		try{
 		$req = $this->db->prepare($query);
 		$req->execute();
@@ -120,15 +106,11 @@
 		echo 'Echec insertion évènement';
 		return false;
 		}
-
         return  $req->fetchAll(PDO::FETCH_CLASS,"evenement");
 	}
 
-<<<<<<< HEAD
-	public function supprimerEvenement($idE,$nomE,$dateE,$lieuE){	
-=======
- function supprimerEvenement($idE,$nomE,$dateE,$lieuE,$lienBE,$infoE,$imageE){
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
+
+	public function supprimerEvenement($idE,$nomE,$dateE,$lieuE){
 		$query = "DELETE FROM evenement";
 		$query .= " WHERE idE='".$idE."' AND nomE='".$nomE."'";
 		$query .= " AND dateE='".$dateE."' AND lieuE='".$lieuE."'";
@@ -143,13 +125,9 @@
 		return $result;
 	}
 
-<<<<<<< HEAD
-	public function modifierNomE($idE){	
+
+	public function modifierNomE($idE){
 		$query = "UPDATE evenement ";
-=======
-function modifierNomE($idE){
-		$query = "UPDATE ".$this->table;
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
 		$query .= " SET nomE='".$nomE."' WHERE idE='".$idE."'";
 		try{
 		$stmt = $this->db->prepare($query);
@@ -162,13 +140,9 @@ function modifierNomE($idE){
 		return $result;
 	}
 
-<<<<<<< HEAD
-	public function modifierDateE($idE){	
+
+	public function modifierDateE($idE){
 		$query = "UPDATE evenement";
-=======
- function modifierDateE($idE){
-		$query = "UPDATE ".$this->table;
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
 		$query .= " SET dateE='".$dateE."' WHERE idE='".$idE."'";
 		try{
 		$stmt = $this->db->prepare($query);
@@ -181,15 +155,13 @@ function modifierNomE($idE){
 		return $result;
 	}
 
-<<<<<<< HEAD
-	public function modifierLieuE($idE){	
+
+	public function modifierLieuE($idE){
 		$query = "UPDATE evenement";
 		$query .= " SET lieuE='".$lieuE."' WHERE idE='".$idE."'";
-=======
-  function modifierLienE($idE){
 		$query = "UPDATE ".$this->table;
 		$query .= " SET lienBE='".$lienBE."' WHERE idE='".$idE."'";
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
+
 		try{
 		$stmt = $this->db->prepare($query);
     	$result	=$stmt->execute();
@@ -201,14 +173,10 @@ function modifierNomE($idE){
 		return $result;
 	}
 
-<<<<<<< HEAD
+
 	public function ajouterOrganisateurEv($idE,$idO){
-		$query = "INSERT INTO organisateur_evenement VALUES($idO,$idE) WHERE idE='".$idE."'"; 
-=======
-	function modifierInfoE($idE){
-		$query = "UPDATE ".$this->table;
+		$query = "INSERT INTO organisateur_evenement VALUES($idO,$idE) WHERE idE='".$idE."'";
 		$query .= " SET infoE='".$infoE."' WHERE idE='".$idE."'";
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
 		try{
 		$req = $this->db->prepare($query);
 		$req->execute();
@@ -219,15 +187,11 @@ function modifierNomE($idE){
         return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
 	}
 
-<<<<<<< HEAD
-	public function supprimerIdO($idE,$idO){	
+	public function supprimerIdO($idE,$idO){
 		$query = "UPDATE organisateur_evenement";
 		$query .= "SET idO='".$idO."' WHERE idE='".$idE."'";
-=======
- function modifierimageE($idE){
 		$query = "UPDATE ".$this->table;
 		$query .= " SET imageE='".$imageE."' WHERE idE='".$idE."'";
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
 		try{
 		$stmt = $this->db->prepare($query);
     	$result	=$stmt->execute();
@@ -238,7 +202,6 @@ function modifierNomE($idE){
 		}
 		return $result;
 	}
-<<<<<<< HEAD
 
 /*--------------------------------GESTION DE RECHERCHE D'ARTISTESs-------------------------------------*/
 
@@ -249,7 +212,7 @@ function modifierNomE($idE){
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
@@ -260,7 +223,7 @@ function modifierNomE($idE){
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
@@ -271,7 +234,7 @@ function modifierNomE($idE){
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
@@ -282,13 +245,36 @@ function modifierNomE($idE){
 		$result=$req->fetchAll(PDO::FETCH_CLASS,'artiste');
 		} catch (PDOException $e) {
 			die("PDO Error : ".$e->getMessage());
-		} 
+		}
 			return $result;
 	}
 
 
-=======
-  */
+/*--------------------------------GESTION DE RECHERCHE D'ARTISTESs-------------------------------------*/
+
+  public function getMessagesRecus($idPers){
+
+    $query = "SELECT a.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idDestinataire=$idPers and m.idExpediteur=a.idPers union SELECT g.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idDestinataire=$idPers and m.idExpediteur=g.idPers";
+    try {
+    $req = $this->db->query($query);
+    $result=$req->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      die("PDO Error : ".$e->getMessage());
+    }
+      return $result;
+  }
+
+  public function getMessagesEnvoyes($idPers){
+
+    $query = "SELECT idExpediteur, a.nom as destinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idExpediteur=$idPers and m.idDestinataire=a.idPers union SELECT idExpediteur, g.nom as destinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idExpediteur=$idPers and m.idDestinataire=g.idPers";
+    try {
+    $req = $this->db->query($query);
+    $result=$req->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      die("PDO Error : ".$e->getMessage());
+    }
+      return $result;
+  }
 
  /*
  fonction messagerie
@@ -299,20 +285,18 @@ function modifierNomE($idE){
           $rs =$this->db->query($rquete1);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
          }
-*/
-  /*function MailEnvoye() {
+
+  function MailEnvoye() {
     $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE dateEnvoi > NOW()";
       //var_dump($rquete1) ;
       $rs =$this->db->query($rquete1);
       $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
-  }*/
-/*  function MailBrouillon() {
+  }
+function MailBrouillon() {
     $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE estBrouillon = "TRUE"";
       //var_dump($rquete1) ;
       $rs =$this->db->query($rquete1);
       $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
-  }
- }
- */
->>>>>>> 3457a3160308cdb17f7bd64fc42239671426e45b
-    ?>
+  }*/
+
+}    ?>

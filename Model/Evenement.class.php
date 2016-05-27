@@ -12,37 +12,26 @@
       //public $heure_F; // heure de fin
 ////////////////
 ///
-      public $idE; // id de l'evenement
-      public $nomE; // nom de l'evenement
-      public $dateE;  //Date de l'evenement
-      public $lieuE;  //Lieu de l'evenement
-      public $lienBE; //Lien pour achat
-      public $infoE; //Infos sur le groupe
-      public $imageE; // image de l'évènement
+      private $idE; // id de l'evenement
+      private $libelleE; // nom de l'evenement
+      private $dateE;  //Date de l'evenement
+      private $lieuE;  //Lieu de l'evenement
 
       //fonction getter
-    /*function getIdE() {
+    function idE() {
        return $this->idE;
      }
-     function getNomE() {
-       return $this->nomE;
+     function libelleE() {
+       return $this->libelleE;
      }
-     function getDateE() {
+     function dateE() {
        return $this->dateE;
      }
-     function getLieuE() {
+     function lieuE() {
        return $this->lieuE;
      }
-     function getLienBE() {
-       return $this->lienBE;
-     }
-     function getInfoE() {
-       return $this->infoE;
-     }
-     function getImageE() {
-       return $this->imageE;
-     }*/
-    function __toString() {
+
+    /*function __toString() {
       return $this->getJour() . " "
             .$this->getMois() . " "
             .$this->getAnnee() . " "
@@ -63,7 +52,7 @@
     }
     function getHeure_F() {
       return $this->heure_F;
-    }
+    }*/
 
     }
 

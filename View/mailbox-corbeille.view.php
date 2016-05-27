@@ -18,7 +18,7 @@
     <a href="mailbox-inde.view.php">Indésirables</a>
     <a href="mailbox-envoi.view.php">Envoyé</a>
     <a href="mailbox-broul.view.php">Brouillons</a>
-    <a href="mailbox-corbeille.view.php">Courbeille</a>
+    <a href="mailbox-corbeille.view.php">Corbeille</a>
   </div>
   <div class="messages">
     <input name="search" placeholder="search" />
@@ -26,10 +26,18 @@
       <label>actions <span>▼</span></label>
       <ul>
         <li>Ranger</li>
-        <li>Déplacer vers</li>
+        <li>Déplacer vers
+          <div class="ssMenu">
+            <ul>
+              <li>Indésirables</li>
+              <li>Corbeille</li>
+            </ul>
+          </div>
+        </li>
         <li>Supprimer</li>
       </ul>
     </div>
+
 
     <div class="message">
       <input type="checkbox" />

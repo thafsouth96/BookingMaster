@@ -1,42 +1,55 @@
 
+CREATE TABLE id_datatype (
+          id TEXT PRIMARY KEY,
+          datatype TEXT
+);
+
 CREATE TABLE booker (
-          idB TEXT PRIMARY KEY, /* identifiant pour + facilité si gestion bookers */
-          nomB TEXT, /* nom du booker */
+          idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion bookers */
+          nom TEXT, /* nom du booker */
+          email TEXT,
+          telephone TEXT,
           prenomB TEXT,
           dateNaissB date,
-          mailB TEXT,
           mdp TEXT,
           constraint strlen CHECK (length(mdp) > 8) /* mot de passe du booker pour se log(taille minimum de 8 caractères) */
 
 );
 
 CREATE TABLE artiste (
-          idAr TEXT PRIMARY KEY, /* identifiant pour + facilité si gestion artistes */
-          nomAr TEXT , /* nom de l'artiste */
+          idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion artistes */
+          nom TEXT , /* nom de l'artiste */
+          email TEXT , /* email de l'artiste */
+          telephone TEXT, /* telephone de l'artiste */
           prenomAr TEXT , /* prenom de l'artiste */
+          dateNaissAr date,
           roleAr TEXT , /* role de l'artiste */
-          telephoneAr TEXT, /* telephone de l'artiste */
-          emailAr TEXT , /* email de l'artiste */
-          descriptionAr TEXT /* description  du groupe */
+          adresseAr TEXT,
+          descriptionAr TEXT,
+          styleMusicalAr TEXT
 );
 
-CREATE TABLE organisateurs (
-          idO TEXT PRIMARY KEY, /* identifiant pour + facilité si gestion organisateurs */
-          nomO TEXT , /*nom de l'organisateur*/
-          emailO TEXT , /* email de l'organisateur */
-          telephoneO TEXT  /* telephone de l'organisateur */
+CREATE TABLE organisateur (
+          idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion organisateurs */
+          nom TEXT , /*nom de l'organisateur*/
+          email TEXT , /* email de l'organisateur */
+          telephone TEXT  /* telephone de l'organisateur */
 );
 
 CREATE TABLE groupeMusical (
-        idGM TEXT PRIMARY KEY, /* identifiant pour + facilité si gestion groupe */
-        nomGM TEXT , /* nom du groupe */
-        descriptionGM TEXT /* description  du groupe */
+        idPers TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilité si gestion groupe */
+        nom TEXT , /* nom du groupe */
+        email TEXT,
+        telephone TEXT,
+        descriptionGM TEXT, /* description  du groupe */
+        mdpGM TEXT,
+        styleMusicalGM TEXT
 );
 
 
-CREATE TABLE evenements (
-          idE TEXT PRIMARY KEY, /* identifiant pour + facilités si gestion évènements */
-          nomE TEXT, /*titre de l'évènement */
+CREATE TABLE evenement (
+          idE TEXT PRIMARY KEY REFERENCES id_datatype(id), /* identifiant pour + facilités si gestion évènements */
+          libelleE TEXT, /*titre de l'évènement */
           dateE date, /* date de l'évènement */
           lieuE TEXT /* adresse du lieu de l'évènement */
 );
@@ -63,19 +76,19 @@ CREATE TABLE artiste_groupeMusical ( /* association entre les artistes et leur g
 );
 
 
-CREATE TABLE contacts ( /* association entre les bookers et les artistes pour afficher les artistes des bookers */
+CREATE TABLE booker_contacts ( /* association entre les bookers et les artistes pour afficher les artistes des bookers */
           idB TEXT, /* id du booker */
-          idGM TEXT,/* id du groupe musical */
-          PRIMARY KEY(idB,idGM), /* clés primaires inséparables */
+          idC TEXT,/* id du contact */
+          PRIMARY KEY(idB,idC), /* clés primaires inséparables */
           FOREIGN KEY(idB) REFERENCES booker(idB), /* références aux attributs des classes booker et artiste */
-          FOREIGN KEY(idGM) REFERENCES artiste(idGM)
+          FOREIGN KEY(idC) REFERENCES id_datatype(id)
 );
 
 CREATE TABLE groupeContact (
           idB TEXT REFERENCES booker(idB),
           nomGC TEXT,
           descriptionGC TEXT,
-          PRIMARY KEY (idb,nomGC)
+          PRIMARY KEY (idB,nomGC)
 );
 
 CREATE TABLE groupeContact_groupeMusical (
@@ -86,15 +99,16 @@ CREATE TABLE groupeContact_groupeMusical (
           FOREIGN KEY (idB,nomGC) REFERENCES groupeContact(idB,nomGC)
 );
 
+--A TESTER
 CREATE TABLE organisateur_evenement ( /* association entre les organisateurs et les evenements pour afficher les organisateurs liés aux évènements */
           idO TEXT, /* id de l'organisateur */
           idE TEXT, /* id de l'évènement */
           PRIMARY KEY(idO,idE), /* clés primaires inséparables */
-          FOREIGN KEY(idO) REFERENCES organisateurs(idO), /* références aux attributs des classes organisateur et evenements */
+          FOREIGN KEY(idO) REFERENCES organisateur(idO), /* références aux attributs des classes organisateur et evenements */
           FOREIGN KEY(idE) REFERENCES evenements(idE)
 );
 
-
+--A TESTER
 CREATE TABLE booker_evenement (
           idB TEXT, /* id du booker */
           idE TEXT, /* id de l'évènement */
@@ -103,6 +117,7 @@ CREATE TABLE booker_evenement (
           FOREIGN KEY(idE) REFERENCES evenements(idE)
 );
 
+--A TESTER
 CREATE TABLE goupeMusical_Evenement (
           idGM TEXT, /* id du groupe */
           idE TEXT, /* id de l'évènement */

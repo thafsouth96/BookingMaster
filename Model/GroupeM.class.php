@@ -1,25 +1,27 @@
 <?php
+include('Personne.class.php');
 
-    class GroupeM {
-        public $idGM;  //Id du groupe
-        public $nomGM; /* nom du groupe */
-        public $descriptionGM; /* description longue du groupe */
+    class GroupeM extends Personne {
+        private $descriptionGM; /* description du groupe */
+        private $mdp;
+        private $styleMusical;
 
         function __toString() {
-          return $this->getIdGM() . " "
-                .$this->getNomGM() . " "
+          return parent::__toString() . " "
                 .$this->getDescriptionGM() . " ";
 
         }
           // Fonctions getter
-       function getIdGM() {
-         return $this->idGM;
-       }
-       function getNomGM() {
-         return $this->nomGM;
-       }
-       function getDescriptionGM() {
+       function descriptionGM() {
          return $this->descriptionGM;
+       }
+
+       function mdp() {
+         return $this->mdp;
+       }
+
+       function styleMusical() {
+         return $this->styleMusical;
        }
 
   }

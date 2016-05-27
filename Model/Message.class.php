@@ -1,49 +1,49 @@
 <?php
     // Un booker
-    class Booker {
-      public $idExpediteur;  /* id de l'expediteur */
-      public $idDestinateur; /* id de destinateur */
-      public $dateEnvoi;/* date d'envoi */
-      public $objet; /* objet du mail*/
-      public $message; /* message du mail*/
-      public $EstBrouillon;  /* mail brouillon */
-      public $ExpDelete; /**/
-      public $DestDelete;/**/
+    class Message {
+      private $idExpediteur;  /* id de l'expediteur */
+      private $idDestinataire; /* id de destinataire */
+      private $dateEnvoi;/* date d'envoi */
+      private $objet; /* objet du mail*/
+      private $message; /* message du mail*/
+      private $estBrouillon;  /* mail brouillon */
+      private $expDelete; /**/
+      private $destDelete;/**/
 
       function __toString() {
-        return $this->getIdExpediteur() . " "
-              .$this->getIdDestinateur() . " "
-              .$this->getDateEnvoi() . " "
-              .$this->getObjet() . " "
-              .$this->getMessage() . " "
-              .$this->getEstBrouillon() . " "
-              .$this->getExpDelete() . " "
-              .$this->getDesDelete() . " ";
+        return $this->idExpediteur() . " "
+              .$this->idDestinataire() . " "
+              .$this->dateEnvoi() . " "
+              .$this->objet() . " "
+              .$this->message() . " "
+              .$this->estBrouillon() . " "
+              .$this->expDelete() . " "
+              .$this->destDelete() . " ";
       }
-       // Fonctions getter
-       function getIdExpedinateur() {
+       // Fonctions ter
+       function idExpedinateur() {
          return $this->idExpedinateur;
        }
-       function getIdDestinateur() {
+       function idDestinataire() {
          return $this->idDestinataire;
        }
-       function getDateEnvoi() {
+       function dateEnvoi() {
          return $this->dateEnvoi;
        }
-       function getObjet() {
+       function objet() {
          return $this->objet;
        }
-       function getMessage() {
+       function message() {
          return $this->message;
        }
-       function getEstBrouillon() {
-         return $this->EstBrouillon;
+       function estBrouillon() {
+         return $this->estBrouillon;
        }
-       function getExpDelete() {
-         return $this->ExpDelete;
+       function expDelete() {
+         return $this->expDelete;
        }
-       function getDesDelete() {
-         return $this->DestDelete;
+       function destDelete() {
+         return $this->destDelete;
        }
 
 

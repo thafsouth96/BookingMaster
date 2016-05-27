@@ -1,9 +1,9 @@
 <?php
 $email= 'laszlo.sajkiewicz@iut2.upmf-grenoble.fr' . ',';
-//$email.='tom.munier@iut2.upmf-grenoble.fr' . ',';
-//$email.='thafsouth.adli@iut2.upmf-grenoble.fr' . ',';
-//$email.='julien.bouteyre@iut2.upmf-grenoble.fr' . ',';
-//$email.='victor.carratala@iut2.upmf-grenoble.fr' . ',';
+$email.='tom.munier@iut2.upmf-grenoble.fr' . ',';
+$email.='thafsouth.adli@iut2.upmf-grenoble.fr' . ',';
+$email.='julien.bouteyre@iut2.upmf-grenoble.fr' . ',';
+$email.='victor.carratala@iut2.upmf-grenoble.fr' . ',';
 $email.='florian.ekoue@iut2.upmf-grenoble.fr';
   $headers = 'From: bookingMaster' . "\r\n" .
      'X-Mailer: PHP/' . phpversion();

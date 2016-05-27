@@ -1,3 +1,3 @@
-1B|Francis|Pichard|08/02/1981|francis.pichard@laposte.net|mdppichard
-2B|Tom|Munier|07/01/1993|tom.munier@gmail.com|mdpmunier
-3B|Jean-Phillipe|Fouchard|22/04/1967|jeanphil@gmail.com|mdpfouchard
+7|Pichard|francis.pichard@laposte.net|0101010101|Francis|08/02/1981|mdppichard
+8|Munier|tom.munier@gmail.com|0101010101|Tom|07/01/1993|mdpmunier
+9|Fouchard|jeanphil@gmail.com|0101010101|Jean-Phillipe|22/04/1967|mdpfouchard
