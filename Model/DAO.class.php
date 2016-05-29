@@ -60,13 +60,12 @@
           }
           else return NULL ;
         }
-
-        function inscription($nom,$prenom,$dateNaiss,$mail,$mdp) {
-            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from booker),$nom,$prenom,$dateNaiss,$mail,$mdp)" ;
+// IDEA: id,nom,email,num,prenom,datenaiss,mdp
+        function inscription($nom,$prenom,$dateNaiss,$mail,$mdp,$tel) {
+            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from booker),$nom,$mail,$tel,$prenom,$dateNaiss,$mdp)" ;
             $sth=$this->db->query($req);
             $result = $sth->fetchAll(PDO::FETCH_CLASS,'Booker');
             return $result;
-
         }
 
 

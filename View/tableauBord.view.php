@@ -9,29 +9,25 @@
     <title>BookingMaster</title>
 
   </head>
+  <div id = "barrePrincipale">
 
-  <body>
-	  <div id = "barrePrincipale">
+    <img id="menu" src="../data/icon/MenuNav_icon/menuNav.png" alt="menu" width="40" height="40">
 
+    <img id="notifications" src="../data/icon/notifiOfficiel.png" alt="notification" width="40">
+    <a href="../Controller/tableauBord.ctrl.php"><img id="home" src="../data/icon/home.png" alt="home" width="40"></a>
+    <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
+      <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
 
-		  <img id="menu" src="../data/icon/MenuNav_icon/menuNav.png" alt="menu" width="40" height="40">
+    <div id="menuNav" >
+      <?php
+      include_once("../Controller/menuNav.ctrl.php");
+      ?>
+    </div>
 
-		  <img id="notifications" src="../data/icon/notifiOfficiel.png" alt="notification" width="40">
-		  <a href="../Controller/tableauBord.ctrl.php"><img id="home" src="../data/icon/home.png" alt="home" width="40"></a>
-		  <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
-		  <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
+  </div>
 
-
-		  <div id="menuNav" >
-			  <?php
-				include_once("../Controller/menuNav.ctrl.php");
-			  ?>
-		  </div>
-
-		  <!--img id="messages" src="../data/icon/message-512.gif" alt="messagerie" width="40"-->
-
-	  </div>
-
+<body>
+  
 	  <div id="tableauBord">
 		  <div id = "calendrier">
 			  <h2>Calendrier</h2>
