@@ -44,6 +44,8 @@ div a {
 #content_menuNav{
 
   border : solid 1px black ;
+  z-index: 999;
+  position: absolute; 
 
 }
 #content_rows{

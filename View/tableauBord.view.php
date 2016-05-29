@@ -17,7 +17,7 @@
 		  <img id="menu" src="../data/icon/MenuNav_icon/menuNav.png" alt="menu" width="40" height="40">
 
 		  <img id="notifications" src="../data/icon/notifiOfficiel.png" alt="notification" width="40">
-		  <a href="../Controller/tableauBord.ctrl.php"> <img id="home" src="../data/icon/home.png" alt="home" width="40"> </a>
+		  <a href="../Controller/tableauBord.ctrl.php"><img id="home" src="../data/icon/home.png" alt="home" width="40"></a>
 		  <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
 		  <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
 
@@ -72,8 +72,8 @@
           <td>Expediteur</td><td>Objet</td>
         </tr>
         <?php
-            //global $messagesRecus;
-            //global $Booker1;
+            global $messagesRecus;
+            global $Booker1;
             foreach ($messagesRecus as $value){
               echo '<tr>';
                   echo '<td>', $value['expediteur'], '</td>', '<td>', $value['objet'], '</td>';
