@@ -5,7 +5,7 @@
   /*margin-left: 0px;
   margin-right: 0px ;*/
   padding-left: 0px;
-  position:absolute;
+  position:relative;
   z-index:999;
 
 }
@@ -16,11 +16,13 @@ div {
   font-weight: bold;
   font-size: 20px;
   color: white;
+    z-index:999;
 }
 
 img {
   width:40px;
   height: 40px;
+    z-index:999;
 }
 
 div a {
@@ -28,11 +30,13 @@ div a {
   text-decoration: none ;
   color: black;
   /*border : solid 1px red;*/
+    z-index:999;
 
 }
 .hoverDiv img {
   width : 30px ;
   height: 30px ;
+    z-index:999;
 
 }
 
@@ -45,13 +49,13 @@ div a {
 
   border : solid 1px black ;
   z-index: 999;
-  position: absolute; 
+
 
 }
 #content_rows{
   margin-top: 50px ;
   /*border : solid 1px red ;*/
-
+  z-index:999;
 }
 div .profil{
   /*border : solid 1px red;*/
@@ -64,6 +68,7 @@ width : 80px ;
 height: 80px ;
 margin-top: 40px;
 margin-left: 100px ;
+  z-index:999;
 
 
 }
@@ -71,5 +76,6 @@ margin-left: 100px ;
 
   width : 110px ;
   margin-left: 85px ;
+    z-index:999;
 
 }

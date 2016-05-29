@@ -58,7 +58,7 @@
 				 <td> </td>
 				 <td><input type="button" value="Next -->" onClick="Skip('+')"></td>
 			  </tr></form>
-			  <div id=Calendar style="position:relative;width:238px;top:-2px;" align="left"></div>
+			  <div id=Calendar style="width:238px;top:-2px;" align="left"></div>
 			  </body>
 		  </div>
 
