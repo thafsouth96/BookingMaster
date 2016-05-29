@@ -32,7 +32,7 @@
                   }
 
                 } else{
-                    e
+                    
                     echo "<script> alert(\"Le mot de passe ou le pseudo que vous avez saisi est incorrect. Veuillez r\u00e8essayer\") </script>";
                     include_once("../View/connexion.view.html");
                   }
