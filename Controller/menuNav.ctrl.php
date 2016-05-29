@@ -1,4 +1,6 @@
 <?php
+
+
     $menu = array(
 
     'messagerie'  => array('image'=>'../data/icon/MenuNav_icon/messagerie.png' ,  'text'=>'Messagerie',  'url'=>'../View/mailbox.view.php'),
@@ -8,7 +10,7 @@
     'parametres' => array('image'=>'../data/icon/MenuNav_icon/parametres.png',  'text'=>'Paramètres', 'url'=>''),
     'deconnexion' => array('image'=>'../data/icon/MenuNav_icon/logout.png',  'text'=>'Deconnexion', 'url'=>''),
     );
-
+    global $Booker1 ;
     function generateMenu($items) {
 
       $html = "<nav id= \"content_menuNav\">\n";
