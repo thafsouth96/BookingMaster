@@ -1,18 +1,25 @@
 <?php
     $menu = array(
-    'messagerie'  => array('image'=>'../data/icon/icon_email.png' ,  'text'=>'Messagerie'/*,  'url'=>'../View/mailbox.view.php'*/),
-  'contacts'  => array('image'=>'../data/icon/contact-book.png',  'text'=>'Mes Contacts'/*,  'url'=>'../View/contact.view.php'*/),
-'calendrier' => array('image'=>'../data/icon/datepicker.png',  'text'=>'Mon Calendrier'/*, 'url'=>'../View/calendrier.view.php'*/),
-    'notes' => array('image'=>'../data/icon/note.png',  'text'=>'Mes Notes'/*, 'url'=>''*/),
-  'parametres' => array('image'=>'../data/icon/settings.png',  'text'=>'Paramètres'/*, 'url'=>''*/),
-'deconnexion' => array('image'=>'../data/icon/logout.png',  'text'=>'Deconnexion'/*, 'url'=>''*/)
+    'messagerie'  => array('image'=>'../data/icon/MenuNav_icon/messagerie.png' ,  'text'=>'Messagerie',  'url'=>'../View/mailbox.view.php'),
+    'contacts'  => array('image'=>'../data/icon/MenuNav_icon/contact.png',  'text'=>'Mes Contacts',  'url'=>'../View/contact.view.php'),
+    'calendrier' => array('image'=>'../data/icon/MenuNav_icon/calendrier.png',  'text'=>'Mon Calendrier', 'url'=>'../View/calendrier.view.php'),
+    'notes' => array('image'=>'../data/icon/MenuNav_icon/note.png',  'text'=>'Mes Notes', 'url'=>''),
+    'parametres' => array('image'=>'../data/icon/MenuNav_icon/parametres.png',  'text'=>'Paramètres', 'url'=>''),
+    'deconnexion' => array('image'=>'../data/icon/MenuNav_icon/logout.png',  'text'=>'Deconnexion', 'url'=>''),
     );
 
     function generateMenu($items) {
-      $html = "<nav>\n";
+      $html =  "<nav id= \"content_menuNav\">\n";
+      $html .= "<div class = \"profil\">
+                  <a class= \"profilMenu\"href=''><img src=\"../data/icon/MenuNav_icon/profil.png\"></a>\n
+                  <a href=''><p class =\"profilMenu\">Booker Nom</p></a>\n
+                </div>\n
+              <div id=\"content_rows\">\n";
+
       foreach($items as $item) {
-        $html .= "<div id={$item['text']}><img src={$item['image']}>{$item['text']}</div>\n";
+        $html .= "<div class = \"hoverDiv\"><a class = \"iconMenuNav\"href='{$item['url']}'><img src={$item['image']}></a> <a href='{$item['url']}'>{$item['text']}</a></div>\n";
       }
+      $html .= "</div>\n";
       $html .= "</nav>\n";
       return $html;
     }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/tableauBord.css">
     <script type="text/javascript" src="../lib/jQuery/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="../js/menu.js"></script>
+
 
     <title>BookingMaster</title>
 
@@ -18,16 +18,15 @@
     <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
       <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
 
-    <div id="menuNav" >
+
       <?php
       include_once("../Controller/menuNav.ctrl.php");
       ?>
-    </div>
 
+      <script type="text/javascript" src="../js/menu.js"></script>
   </div>
 
 <body>
-  
 	  <div id="tableauBord">
 		  <div id = "calendrier">
 			  <h2>Calendrier</h2>
@@ -77,7 +76,7 @@
             }
 
         ?>
-      </table
+
 
 
 			</table>
