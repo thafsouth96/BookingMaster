@@ -1,0 +1,32 @@
+h1{
+  text-align: center;
+  color: #ff8410;
+}
+#info{
+  position: relative;
+  left: 45%;;
+}
+#ajoutArtiste{
+  border-style: solid;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+#messagerie {
+  border-style: solid;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+#calendrier {
+  border-style: solid;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+#parametres {
+  border-style: solid;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
