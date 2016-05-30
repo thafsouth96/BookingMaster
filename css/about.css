@@ -1,0 +1,45 @@
+h1 {
+  text-align: center;
+  color: #ff8410;
+}
+#resume {
+  text-align: center;
+}
+#credit {
+  position: relative;
+  top: 100px;;
+  left: 45%;
+}
+#credit tr:nth-child(1) {
+  color: red;
+}
+#credit tr:nth-child(2) {
+  color: blue;
+}
+#credit tr:nth-child(3) {
+  color: red;
+}
+#credit tr:nth-child(4) {
+  color: blue;
+}
+#credit tr:nth-child(5) {
+  color: red;
+}
+#credit tr:nth-child(6) {
+  color: blue;
+}
+#menuG{
+  position: absolute;
+  top: 18%;
+  bottom: 24%;
+  background-color: #EEE;
+  width: 10%;
+
+}
+#menuG a{
+  display: block;
+  padding: 10% 1%;
+  color: #3D9FC4;
+  font-weight: bold;
+  text-decoration: none;
+}
