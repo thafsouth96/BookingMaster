@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="Design/profilArtiste.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="../css/profilArtiste.css" media="screen" charset="utf-8">
     <title>bookMaster</title>
   </head>
   <body>
