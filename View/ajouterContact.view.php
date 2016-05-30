@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../View/Design/ajouterContact.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="../css/ajouterContact.css" media="screen" charset="utf-8">
     <title>bookMaster</title>
   </head>
   <body>
