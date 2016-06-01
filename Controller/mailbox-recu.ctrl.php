@@ -4,9 +4,9 @@
     include_once("../Model/DAO.class.php");
     include_once("../Model/Message.class.php");
    global $mailRecu;
-   
 
-    $mailRecu = $dao->AfficheMailRecu();
+
+    $mailRecu = $dao->getMessagesRecus(7);
 
 
 
