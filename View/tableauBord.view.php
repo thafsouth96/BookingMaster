@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/tableauBord.css">
     <script type="text/javascript" src="../lib/jQuery/jquery-1.11.1.min.js"></script>
-
+    <script type="text/javascript" src="../js/menu.js"></script>
 
     <title>BookingMaster</title>
 
   </head>
   <div id = "barrePrincipale">
 
-    <img id="menu" src="../data/icon/MenuNav_icon/menuNav.png" alt="menu" width="40" height="40">
+    <img id="menu" type = "button"  src="../data/icon/MenuNav_icon/menuNav.png" width="40" height="40">
 
     <img id="notifications" src="../data/icon/notifiOfficiel.png" alt="notification" width="40">
     <a href="../Controller/tableauBord.ctrl.php"><img id="home" src="../data/icon/home.png" alt="home" width="40"></a>
@@ -23,7 +23,7 @@
       include_once("../Controller/menuNav.ctrl.php");
       ?>
 
-      <script type="text/javascript" src="../js/menu.js"></script>
+
   </div>
 
 <body>
