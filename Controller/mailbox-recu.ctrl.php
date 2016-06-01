@@ -1,8 +1,10 @@
 <?php
 
     // Inclusion du modèle
-    include_once("../model/DAO.class.php");
-  //  include_once("../model/.class.php");
+    include_once("../Model/DAO.class.php");
+    include_once("../Model/Message.class.php");
+   global $mailRecu;
+   
 
     $mailRecu = $dao->AfficheMailRecu();
 
