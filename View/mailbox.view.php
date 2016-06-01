@@ -8,7 +8,7 @@
   <body>
 
 <header>
-  <h1>messages</h1>
+  <h1>Messagerie</h1>
 </header>
 
 <div class="mailbox">
