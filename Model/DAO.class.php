@@ -278,24 +278,38 @@
  /*
  fonction messagerie
   */
- /*function BoiteRecep() { // affiche les mail contenus dans la boite de reception
-        $rquete1 = "SELECT idExpediteur,objet,message FROM message'";
+ function AfficheMailRecu() { // affiche les mail contenus dans la boite de reception
+        $rquete1 = "SELECT * FROM message";
           //var_dump($rquete1) ;
           $rs =$this->db->query($rquete1);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
-         }
+          return $rw ;
+        }
 
-  function MailEnvoye() {
-    $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE dateEnvoi > NOW()";
+//function AfficheMailEnvoye() {
+  //  $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE dateEnvoi > TIME()";
+  //  var_dump($rquete1) ;
+  //    $rs =$this->db->query($rquete1);
+  //    $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
+  //    return $rw;
+  //}
+function AfficheMailBrouillon() {
+    $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE estBrouillon = 'true'";
       //var_dump($rquete1) ;
       $rs =$this->db->query($rquete1);
       $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
+      return $rw;
   }
-function MailBrouillon() {
-    $rquete1 = "SELECT idExpediteur,objet,message FROM message WHERE estBrouillon = "TRUE"";
-      //var_dump($rquete1) ;
-      $rs =$this->db->query($rquete1);
-      $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
-  }*/
+  public function AfficheMailEnvoye($idPers){
+
+    $query = "SELECT idExpediteur, a.nom as destinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idExpediteur=$idPers and m.idDestinataire=a.idPers union SELECT idExpediteur, g.nom as destinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idExpediteur=$idPers and m.idDestinataire=g.idPers";
+    try {
+    $req = $this->db->query($query);
+    $result=$req->fetchAll(PDO::FETCH_CLASS,'Message');
+    } catch (PDOException $e) {
+      die("PDO Error : ".$e->getMessage());
+    }
+      return $result;
+  }
 
 }    ?>
