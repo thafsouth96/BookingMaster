@@ -13,12 +13,12 @@
 
 <div class="mailbox">
   <div class="nav">
-    <a href="mailbox.view.php">Nouveau</a>
-    <a href="mailbox-recu.view.php">Boite de réception</a>
-    <a href="mailbox-inde.view.php">Indésirables</a>
-    <a href="mailbox-envoi.view.php">Envoyé</a>
-    <a href="mailbox-broul.view.php">Brouillons</a>
-    <a href="mailbox-corbeille.view.php">Corbeille</a>
+    <a href="../View/mailbox.view.php">Nouveau</a>
+    <a href="../Controller/mailbox-recu.ctrl.php">Boite de réception</a>
+    <a href="../Controller/mailbox-inde.ctrl.php">Indésirables</a>
+    <a href="../Controller/mailbox-envoi.ctrl.php">Envoyé</a>
+    <a href="../Controller/mailbox-broul.ctrl.php">Brouillons</a>
+    <a href="../View/mailbox-corbeille.view.php">Corbeille</a>
   </div>
 
     <div class="messages">
@@ -39,66 +39,21 @@
         </ul>
       </div>
 
-    <div class="message">
-      <input type="checkbox" />
-      <span class="sender">T-Ara</span>
-      <span class="date">aujourd'hui</span>
-      <span class="title">Reponse</span>
-    </div>
+
     <?php
+    global $mailEnvoi;
 
-  //          global $MailEnvoi;
 
-  //            foreach ($MailEnvoi as $key => $value) {
-  //                echo "<p>";
-  //                echo $value;
-  //                echo "</p>";
-  //            }
+  foreach ($mailEnvoi as $value) {
+      echo "<div class='message'>";
+      echo "<input type='checkbox' />";
+      echo "<span class='sender'>",$value['destinataire'], "</span>";
+      echo"<span class='date'>",$value['dateEnvoi'], "</span>";
+      echo"<span class='title'>",$value['objet'], "</span>";
+      echo"</div>";
+            }
 
           ?>
-    <div class="message">
-      <input type="checkbox" />
-      <span class="sender">Black M</span>
-      <span class="date">aujourd'hui</span>
-      <span class="title">Reponse</span>
-    </div>
 
-    <div class="message">
-      <input type="checkbox" />
-      <span class="sender">Black M</span>
-      <span class="date">aujourd'hui</span>
-      <span class="title">Reponse</span>
-    </div>
-
-    <div class="message">
-      <input type="checkbox" />
-      <span class="sender">113</span>
-      <span class="date">aujourd'hui</span>
-      <span class="title">Reponse</span>
-    </div>
-
-    <div class="message">
-      <input type="checkbox" />
-      <span class="sender">BigBang</span>
-      <span class="date">aujourd'hui</span>
-      <span class="title">Reponse</span>
-    </div>
-
-    <div class="message">
-      <input type="checkbox" />
-      <span class="sender">AfterSchool</span>
-      <span class="date">aujourd'hui</span>
-      <span class="title">Reponse</span>
-    </div>
-
-    <div class="message">
-      <input type="checkbox" />
-      <span class="sender">Sexion d'assault</span>
-      <span class="date">aujourd'hui</span>
-      <span class="title">Reponse</span>
-    </div>
-
-  </div>
-</div>
 </body>
 </html>
