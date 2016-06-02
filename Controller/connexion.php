@@ -22,8 +22,9 @@
 
                       session_start();
                       $_SESSION['id'] = $Booker1->idPers() ;
+                      $_SESSION['booker'] = $Booker1;
+                      //var_dump($GLOBALS);
                       //var_dump($Booker1->idPers());
-
                       include_once('../Controller/tableauBord.ctrl.php');
                   }
                   else if ($Booker1 != $Booker2){
