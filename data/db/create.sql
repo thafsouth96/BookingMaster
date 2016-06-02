@@ -10,7 +10,7 @@ CREATE TABLE booker (
           email TEXT,
           telephone TEXT,
           prenomB TEXT,
-          dateNaissB date,
+          dateNaissB TEXT,
           mdp TEXT,
           constraint strlen CHECK (length(mdp) > 8) /* mot de passe du booker pour se log(taille minimum de 8 caractères) */
 

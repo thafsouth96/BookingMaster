@@ -2,21 +2,22 @@
 
 
 <!-- Etape de saisie des informations personnelles et la création d'un compte-->
-<form>
+<form action="../Controller/inscription.ctrl.php" method="POST">
     <script type="text/javascript" src="../lib/jQuery/jquery-1.11.1.min.js"></script>
-
-    <input  class="champs" id="nom" type="text" name="nom" placeholder="Votre nom" size="20" required></br>
-    <input  class="champs" id="prenom" type="text" name="prénom" placeholder="Votre prénom" size="20" required></br>
-    <input  class="champs" id="dateNaiss" type="Date" name="Date De naissance" placeholder="Date de naissance" size="20" required=""></br>
-    <input  class= "champs" id = "adresse" type='text' name='adresse' placeholder="Adresse éléctronique" size="" required=""></br>
-    <input  class="champs" id= "password" type='password' name='password' placeholder="Mot de passe" size="20" required=""></br>
-    <input  class="champs" id = "passwordConfirm" type='password' name='passwordConfirm' placeholder="Confirmation de mot de passe" size="20" required=""></br>
-
-
-
     <script type="text/javascript" src="../js/loadInscription.js"></script>
 
-    <br><input class = "buttonBlue" id = "suivant" type="button" name="Suivant" value="Suivant" ></br>
+    <input  class="champs" id="nom" type="text" name="nom" placeholder="Votre nom" size="20" required></br>
+    <input  class="champs" id="prenom" type="text" name="prenom" placeholder="Votre prénom" size="20" required></br>
+    <input  class="champs" id="dateNaiss" type="Date" name="dateNaiss" placeholder="Date de naissance" size="20" required=""></br>
+    <input  class= "champs" id = "adresse" type='text' name="email" placeholder="Adresse éléctronique" size="" required=""></br>
+    <input  class= "champs" id = "num" type='text' name="num" placeholder="Numéro de téléphone" size="" required=""></br>
+    <input  class="champs" id= "password" type="password" name="mdp" placeholder="Mot de passe" size="20" required=""></br>
+    <input  class="champs" id = "passwordConfirm" type="password" name = "mdpConfrim" placeholder="Confirmation de mot de passe" size="20" required=""></br>
+
+
+
+
+    <br><input class = "buttonBlue" id = "suivant" type="submit" name="Suivant" value="Suivant" ></br>
 
     <br><input  class = "buttonOrange" id = "reset" type = "button" name ="Reinitialiser" value = "Reinitialiser"></br>
 </form>

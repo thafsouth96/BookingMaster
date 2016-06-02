@@ -61,11 +61,12 @@
           else return NULL ;
         }
 // IDEA: id,nom,email,num,prenom,datenaiss,mdp
-        function inscription($nom,$prenom,$dateNaiss,$mail,$mdp,$tel) {
-            $req = "INSERT INTO personne values ((SELECT count(*) + 1 from booker),$nom,$mail,$tel,$prenom,$dateNaiss,$mdp)" ;
+
+        function inscription($nom,$email,$num,$prenom,$dateNaiss,$mdp) {
+            $req = "INSERT INTO booker values ((SELECT count(*) + 1 from booker),'$nom','$email','$num','$prenom','$dateNaiss','$mdp')" ;
+            var_dump($req);
             $sth=$this->db->query($req);
-            $result = $sth->fetchAll(PDO::FETCH_CLASS,'Booker');
-            return $result;
+            return $sth;
         }
 
 
