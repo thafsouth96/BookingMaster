@@ -67,7 +67,7 @@
           }
           else return NULL ;
         }
-        /** Fonction d'inscriptionBooker ***/ 
+        /** Fonction d'inscriptionBooker ***/
 // IDEA: id,nom,email,num,prenom,datenaiss,mdp
 
         function inscriptionBooker($nom,$email,$num,$prenom,$dateNaiss,$mdp) {
@@ -328,12 +328,9 @@ function AfficheMailBrouillon() {
     }
       return $result;
   }
-<<<<<<< HEAD
-/*  public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi) {
-=======
-   public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) {
->>>>>>> 875bf91405a08253861470be15343eecda6bf22e
 
+
+   public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) {
     $query = "INSERT INTO message VALUES( $idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message)";
     try{
     $req = $this->db->prepare($query);
