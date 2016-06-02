@@ -321,7 +321,7 @@ function AfficheMailBrouillon() {
   }
   public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi) {
 
-    $query = "INSERT INTO message VALUES( $idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) WHERE idExpediteur='".$idExpediteur."' and idDestinataire='".$idDestinataire"' and dateEnvoi='".$dateEnvoi"' ";
+    $query = "INSERT INTO message VALUES( $idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) WHERE idExpediteur='".$idExpediteur."' and idDestinataire='".$idDestinataire."' and dateEnvoi='".$dateEnvoi"' ";
     try{
     $req = $this->db->prepare($query);
     $req->execute();
