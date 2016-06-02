@@ -18,7 +18,7 @@
     <a href="../Controller/mailbox-inde.ctrl.php">Indésirables</a>
     <a href="../Controller/mailbox-envoi.ctrl.php">Envoyé</a>
     <a href="../Controller/mailbox-broul.ctrl.php">Brouillons</a>
-    <a href="../View/mailbox-corbeille.view.php">Corbeille</a>
+    <a href="../Controller/mailbox-corbeille.ctrl.php">Corbeille</a>
   </div>
   <div class="messages">
     <input name="search" placeholder="search" />

@@ -19,7 +19,7 @@ if((!empty($email) && (!empty($objet) && (!empty($message) && (isset($_POST['env
     echo "</script>"; }
   else {
     include_once("../Model/Booker.class.php");
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     $MailEnvoi= $dao->InsereMail($_SESSION['booker']->idPers(),$email,$objet,$message,'False');
     echo "<script>";
     echo 'alert("Votre message a été envoyé")';

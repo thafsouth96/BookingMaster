@@ -3,30 +3,18 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/tableauBord.css">
-    <script type="text/javascript" src="../lib/jQuery/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="../js/menu.js"></script>
+
 
     <title>BookingMaster</title>
 
   </head>
-  <div id = "barrePrincipale">
 
-    <img id="menu" type = "button"  src="../data/icon/MenuNav_icon/menuNav.png" width="40" height="40">
-
-    <img id="notifications" src="../data/icon/notifiOfficiel.png" alt="notification" width="40">
-    <a href="../Controller/tableauBord.ctrl.php"><img id="home" src="../data/icon/home.png" alt="home" width="40"></a>
-    <div id="rechercheAvancee"><h4>Recherche avancée</h4></div>
-      <input id="recherche" name="search" type="text" placeholder="Rechercher" alt="Search"/>
-
-
-      <?php
-      include_once("../Controller/menuNav.ctrl.php");
-      ?>
-
-
-  </div>
 
 <body>
+  <?php
+      include_once("../View/barre_principale.view.html");
+  ?>
+  
 	  <div id="tableauBord">
 		  <div id = "calendrier">
 			  <h2>Calendrier</h2>

@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/mailbox.css" media="screen" charset="utf-8">
-    <title>bookMaster</title>
-  </head>
-  <body>
 
-<header>
-  <h1>Messagerie</h1>
-</header>
-
-<div class="mailbox">
-  <div class="nav">
-    <a href="../View/mailbox.view.php">Nouveau</a>
-    <a href="../Controller/mailbox-recu.ctrl.php">Boite de réception</a>
-    <a href="../Controller/mailbox-inde.ctrl.php">Indésirables</a>
-    <a href="../Controller/mailbox-envoi.ctrl.php">Envoyé</a>
-    <a href="../Controller/mailbox-broul.ctrl.php">Brouillons</a>
-    <a href="../View/mailbox-corbeille.view.php">Corbeille</a>
-  </div>
-  <div class="messages">
-    <input name="search" placeholder="search" />
-
-
+  <div class="DivNewMessage">
+  
     <h1> MESSAGE</h1>
     <div id="formulaire">
 
@@ -40,6 +17,3 @@
       	<input type="submit" name="envoi" value="Envoyer" class="btn_vld" /></div>
       </form>
   </div>
-</div>
-</body>
-</html>

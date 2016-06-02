@@ -6,30 +6,31 @@ $(document).ready(function(){
       //alert('ça marche') ;
   }) ;
 
-  $("#messagerie").bind('click',function(){
-    $("body").load("../Controller/mailbox-envoi.ctrl.php");
+  $("#messagerieMenu").bind('click',function(){
+
+    //alert("ça marche") ;
+    $("#tableauBord").load("../Controller/mailbox-recu.ctrl.php");
 
   }) ;
 
-  $("#contacts").bind('click',function(){
-    $("body").load("../View/contact.view.php");
-      //alert('ça marche') ;
+  $("#contactsMenu").bind('click',function(){
+    //$("body").load("../View/contact.view.php");
+      alert('Sorry, we are working on it ;)') ;
   }) ;
 
 
-  $("#calendrier").bind('click',function(){
-    $("").load();
-      //alert('ça marche') ;
+  $("#calendrierMenu").bind('click',function(){
+    //$("").load();
+      alert('Sorry, we are working on it ;)') ;
   }) ;
 
-  $("#notes").bind('click',function(){
-    $("").load();
-      //alert('ça marche') ;
+  $("#notesMenu").bind('click',function(){
+    //$("").load();
+      alert('Sorry, we are working on it ;)') ;
   }) ;
 
-  $("#paramètres").bind('click',function(){
-    $("").load();
-      //alert('ça marche') ;
+  $("#paramètresMenu").bind('click',function(){
+      alert('Sorry, we are working on it ;)') ;
   }) ;
 
 
