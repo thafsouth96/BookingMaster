@@ -86,7 +86,7 @@ function verifierEtape1() {
 		$('#passwordConfirm').css("border-color","rgb(217, 38, 38)") ;
 		$('#passwordConfirm').focus();
 		return false ;
-	}
-return true ;
+	}else{
+	$('body').load('../View/inscriptionEtape1.view.html') ; ;
 
 }
