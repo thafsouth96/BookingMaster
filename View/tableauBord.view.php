@@ -74,7 +74,7 @@
                   echo '<td>', $value['expediteur'], '</td>', '<td>', $value['objet'], '</td>';
               echo '</tr>';
             }
-
+            //include('../Controller/mailbox-recu.ctrl.php');
         ?>
 
 
