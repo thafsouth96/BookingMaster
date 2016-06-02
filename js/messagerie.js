@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 
+//$('#contentMsg').load('../View/mailbox.view.php') ;
 	$('#nouveau').bind('click', function() { // Au clic sur le bouton connexion"
 
       //alert("ça marhce") ;
@@ -10,7 +11,7 @@ $(document).ready(function() {
   $('#inBox').bind('click', function() { // Au clic sur le bouton connexion"
 
       //alert("ça marhce") ;
-      $('#contentMsg').load('../Controller/mailbox-recu.ctrl.php') ;
+      $('#contentMsg').load('../Controller/messageRecu.ctrl.php') ;
 
   });
   $('#spam').bind('click', function() { // Au clic sur le bouton connexion"
