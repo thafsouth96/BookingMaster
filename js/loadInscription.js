@@ -2,17 +2,16 @@
 $(document).ready(function() {
 	// Comportement des boutons de menus
 	$('form #suivant').bind('click', function() {
-				verifierEtape1();
-
-	});
+			verifierEtape1() ;
+				});
 
 	$('form #reset').bind('click', function() {
 
 			if(confirm("Voulez vous réinitialiser tous les champs")){
 				resetIns();
-			}
 
-	});
+	}
+});
 
 });
 
@@ -86,7 +85,6 @@ function verifierEtape1() {
 		$('#passwordConfirm').css("border-color","rgb(217, 38, 38)") ;
 		$('#passwordConfirm').focus();
 		return false ;
-	}else{
-	$('body').load('../View/inscriptionEtape1.view.html') ; ;
-
+	}
+	return true ; 
 }
