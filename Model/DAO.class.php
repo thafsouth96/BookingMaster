@@ -39,12 +39,12 @@
        /***Fonction de connexion ****/
 
        function getBooker($id){
-          $query = "SELECT * FROM booker WHERE id = $id";
+          $query = "SELECT * FROM booker WHERE idPers = $id";
           $req =$this->db->query($query);
           $result = $req->fetchAll(PDO::FETCH_CLASS,'Booker');
           return $result[0];
         }
-        
+
        /****Retourne id du booker à partir de son mail******/
         function getMailBooker($mail){
           $rquete1 = "SELECT * FROM booker WHERE email = '$mail'";
@@ -319,5 +319,17 @@ function AfficheMailBrouillon() {
     }
       return $result;
   }
+  public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi) {
+
+    $query = "INSERT INTO message VALUES( $idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) WHERE idExpediteur='".$idExpediteur."' and idDestinataire='".$idDestinataire"' and dateEnvoi='".$dateEnvoi"' ";
+    try{
+    $req = $this->db->prepare($query);
+    $req->execute();
+      } catch (PDOException $e) {
+    echo 'Echec insertion évènement';
+    return false;
+    }
+        return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
+      }
 
 }    ?>
