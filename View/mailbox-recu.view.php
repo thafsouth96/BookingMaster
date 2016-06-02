@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/mailbox.css" media="screen" charset="utf-8">
-    <script type="text/javascript" src="../lib/jQuery/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="../js/messagerie.js"></script>
-    <title>Booking Messagerie</title>
-  </head>
 
-
-
-<body>
-  <header>
-    <h1>Messagerie</h1>
-  </header>
-
-
-<?php
-include_once("../View/menuMessage.view.html") ;
-?>
-<div id=contentMsg >
+<div>
 
     <?php
     global $mailRecu;
