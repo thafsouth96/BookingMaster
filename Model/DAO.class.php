@@ -341,5 +341,5 @@ function AfficheMailBrouillon() {
     }
         return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
       }
-*/
+
 }    ?>
