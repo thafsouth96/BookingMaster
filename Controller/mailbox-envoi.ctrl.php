@@ -6,7 +6,7 @@
    global $mailRecu;
    global $Booker1;
    session_start();
-   var_dump($_SESSION);
+   //var_dump($_SESSION);
 
     $mailEnvoi = $dao->getMessagesEnvoyes($_SESSION['id']);
 

@@ -30,7 +30,7 @@
 
       <form id="contact" action="../Controller/traitement.ctrl.php" method="post">
 
-      		<p><label for="email"></label><input type="email" id="email" name="email" placeholder="Destinataire" required="required" /></p>
+      		<p><label for="email"></label><input type="text" id="email" name="email" placeholder="Destinataire" /></p>
       		<p><label for="cc"></label><input type="text" id="cc" name="cc" placeholder="Autres destinataires" /></p>
 
       		<p><label for="objet"></label><input type="text" id="objet" name="objet" placeholder="Objet" required="required" /></p>

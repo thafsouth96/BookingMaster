@@ -47,7 +47,7 @@
     </div> -->
     <?php
     global $mailRecu;
-
+var_dump($mailRecu);
 
   foreach ($mailRecu as $value) {
     echo "<div class='message'>";
