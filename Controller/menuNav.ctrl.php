@@ -1,4 +1,5 @@
 <?php
+    //var_dump($GLOBALS);
     $menu = array(
     'messagerie'  => array('image'=>'../data/icon/MenuNav_icon/messagerie.png' ,  'text'=>'Messagerie',  'url'=>'../View/mailbox.view.php'),
     'contacts'  => array('image'=>'../data/icon/MenuNav_icon/contact.png',  'text'=>'Mes Contacts',  'url'=>'../View/contact.view.php'),
@@ -12,12 +13,12 @@
       $html =  "<nav id= \"content_menuNav\">\n";
       $html .= "<div class = \"profil\">
                   <a class= \"profilMenu\"href=''><img src=\"../data/icon/MenuNav_icon/profil.png\"></a>\n
-                  <a href=''><p class =\"profilMenu\">Booker Nom</p></a>\n
+                  <a href=''><p class =\"profilMenu\">".$_SESSION['booker']->prenomB().' '.$_SESSION['booker']->nom()."</p></a>\n
                 </div>\n
               <div id=\"content_rows\">\n";
 
-      foreach($items as $item) {
-        $html .= "<div class = \"hoverDiv\"><a class = \"iconMenuNav\"href='{$item['url']}'><img src={$item['image']}></a> <a href='{$item['url']}'>{$item['text']}</a></div>\n";
+      foreach($items as $key => $item) {
+        $html .= "<div class = \"hoverDiv\" id=".$key."Menu"."><a class = \"iconMenuNav\"href='{$item['url']}'><img src={$item['image']}></a> <a href='{$item['url']}'>{$item['text']}</a></div>\n";
       }
       $html .= "</div>\n";
       $html .= "</nav>\n";
