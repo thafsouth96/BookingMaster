@@ -67,13 +67,22 @@
           }
           else return NULL ;
         }
+        /** Fonction d'inscriptionBooker ***/ 
 // IDEA: id,nom,email,num,prenom,datenaiss,mdp
 
-        function inscription($nom,$email,$num,$prenom,$dateNaiss,$mdp) {
-            $req = "INSERT INTO booker values ((SELECT count(*) + 1 from booker),'$nom','$email','$num','$prenom','$dateNaiss','$mdp')" ;
-            var_dump($req);
-            $sth=$this->db->query($req);
-            return $sth;
+        function inscriptionBooker($nom,$email,$num,$prenom,$dateNaiss,$mdp) {
+            $req1 = ('SELECT count(*)  + 1 as id  from id_datatype') ;
+            $sth=$this->db->query($req1);
+            $res = $sth->fetchAll(PDO::FETCH_ASSOC);
+            $id = $res[0]['id'];
+
+
+            $req2 = "INSERT INTO id_datatype values ($id,'Booker')" ;
+            $sth1=$this->db->query($req2);
+
+            $req3 = "INSERT INTO booker values ($id,'$nom','$email','$num','$prenom','$dateNaiss','$mdp')" ;
+            $sth2=$this->db->query($req3);
+            return $sth1 && $sth2 ;
         }
 
 
@@ -319,7 +328,7 @@ function AfficheMailBrouillon() {
     }
       return $result;
   }
-  public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi) {
+/*  public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi) {
 
     $query = "INSERT INTO message VALUES( $idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) WHERE idExpediteur='".$idExpediteur."' and idDestinataire='".$idDestinataire."' and dateEnvoi='".$dateEnvoi"' ";
     try{
@@ -331,5 +340,5 @@ function AfficheMailBrouillon() {
     }
         return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
       }
-
+*/
 }    ?>
