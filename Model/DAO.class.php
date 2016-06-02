@@ -330,16 +330,31 @@ function AfficheMailBrouillon() {
   }
 
 
-   public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) {
-    $query = "INSERT INTO message VALUES( $idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message)";
-    try{
-    $req = $this->db->prepare($query);
-    $req->execute();
-      } catch (PDOException $e) {
-    echo 'Echec insertion évènement';
-    return false;
-    }
-        return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
+   public function InsereMail($idExpediteur,$idDestinataire,$objet,$message,$estBrouillon) {
+      $query = "INSERT INTO message VALUES( '$idExpediteur','$idDestinataire',TIME(),'$objet','$message','$estBrouillon','False','False')";
+      var_dump($query);
+      try{
+      $req = $this->db->prepare($query);
+      $req->execute();
+        } catch (PDOException $e) {
+      echo 'Echec insertion évènement';
+      return false;
       }
+    }
+  public function getContacts($id){
+
+    $query = "SELECT * from groupeMusical g,booker_contacts bc where g.idPers = bc.idc and bc.idB = $id";
+    try {
+    $req = $this->db->query($query);
+    $result=$req->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      die("PDO Error : ".$e->getMessage());
+    }
+      return $result;
+
+  }
+
+
+
 
 }    ?>

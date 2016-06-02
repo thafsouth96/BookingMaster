@@ -7,7 +7,7 @@
 
    global $mailRecu;
    global $Booker1;
-   
+
    if(!isset($_SESSION)){
      session_start() ;
    }
@@ -19,6 +19,6 @@
 
 
     // Charge la vue
-    include("../View/mailbox-recu.view.php");
+    include("../View/messagesRecu.view.html");
 
     ?>
