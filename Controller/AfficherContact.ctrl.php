@@ -12,12 +12,14 @@ include_once("../Model/Booker.class.php");
 
   $idBooker = $_SESSION['id'] ;
   var_dump($idBooker);
-  
+
   $contacts = $dao->getContacts($id);
+  var_dump($contacts) ; 
 
 
 
 
+  include_once("../View/afficheContact.view.php");
 
 
  ?>
