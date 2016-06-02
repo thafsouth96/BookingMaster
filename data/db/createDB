@@ -11,3 +11,4 @@
 .import ../testContacts.txt booker_contacts
 .import ../testGroupeContact.txt groupeContact
 .import ../testGroupeContact_GroupeMusical.txt groupeContact_groupeMusical
+.import ../testBookerEvenement.txt booker_evenement
