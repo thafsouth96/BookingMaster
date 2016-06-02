@@ -33,6 +33,10 @@ $(document).ready(function(){
       alert('Sorry, we are working on it ;)') ;
   }) ;
 
+  $("#deconnexionMenu").bind('click',function(){
+      $('body').load('../Controller/deconnexion.ctrl.php') ;
+  }) ;
+
 
 
 
