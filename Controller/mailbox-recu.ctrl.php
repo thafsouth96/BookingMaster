@@ -4,9 +4,9 @@
     include_once("../Model/DAO.class.php");
     include_once("../Model/Message.class.php");
    global $mailRecu;
-
-
-    $mailRecu = $dao->getMessagesRecus(7);
+   global $Booker1;
+   session_start();
+    $mailRecu = $dao->getMessagesRecus($_SESSION['id']);
 
 
 
