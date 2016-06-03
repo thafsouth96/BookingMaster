@@ -1,3 +1,4 @@
 13|The Beatles|thebeatles@gmail.com|0101010101|Voici une description des Beatles|mdpbeatles|Rock
 14|Georges Brassens|georges.brassens@gmail.com|0101010101|Voici une description de Brassens|mdpbrassens|chanson à texte
 15|Renaud|renaud.sechan@gmail.com|0101010101|Voici une description de Renaud|mdprenaud|chanson à texte
+18|BookinMaster|booking.master@gmail.com|0101010101|Contact BookingMaster|bookingmaster|informatique

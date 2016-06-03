@@ -1,3 +1,3 @@
-7|Pichard|francis.pichard@laposte.net|0101010101|Francis|08/02/1981|mdppichard
+7|Ceret|eric.ceret@gmail.com|0101010101|Eric|08/02/1975|ericceret
 8|Munier|tom.munier@gmail.com|0101010101|Tom|07/01/1993|mdpmunier
 9|Fouchard|jeanphil@gmail.com|0101010101|Jean-Phillipe|22/04/1967|mdpfouchard

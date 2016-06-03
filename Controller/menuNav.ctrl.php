@@ -28,7 +28,7 @@
       $html =  "<nav id= \"content_menuNav\">\n";
       $html .= "<div class = \"profil\">
                   <a class= \"profilMenu\"href=''><img src=\"../data/icon/MenuNav_icon/profil.png\"></a>\n
-                  <a href=''><p class =\"profilMenu\">".$nom.' '.$prenom."</p></a>\n
+                  <a href=''><p class =\"profilMenu\">".$prenom.' '.$nom."</p></a>\n
                 </div>\n
               <div id=\"content_rows\">\n";
 /*href='{$item['url']}'*/

@@ -67,22 +67,13 @@
           }
           else return NULL ;
         }
-        /** Fonction d'inscriptionBooker ***/
 // IDEA: id,nom,email,num,prenom,datenaiss,mdp
 
-        function inscriptionBooker($nom,$email,$num,$prenom,$dateNaiss,$mdp) {
-            $req1 = ('SELECT count(*)  + 1 as id  from id_datatype') ;
-            $sth=$this->db->query($req1);
-            $res = $sth->fetchAll(PDO::FETCH_ASSOC);
-            $id = $res[0]['id'];
-
-
-            $req2 = "INSERT INTO id_datatype values ($id,'Booker')" ;
-            $sth1=$this->db->query($req2);
-
-            $req3 = "INSERT INTO booker values ($id,'$nom','$email','$num','$prenom','$dateNaiss','$mdp')" ;
-            $sth2=$this->db->query($req3);
-            return $sth1 && $sth2 ;
+        function inscription($nom,$email,$num,$prenom,$dateNaiss,$mdp) {
+            $req = "INSERT INTO booker values ((SELECT count(*) + 1 from booker),'$nom','$email','$num','$prenom','$dateNaiss','$mdp')" ;
+            var_dump($req);
+            $sth=$this->db->query($req);
+            return $sth;
         }
 
 
@@ -270,7 +261,7 @@
 
   public function getMessagesRecus($idPers){
 
-    $query = "SELECT a.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idDestinataire=$idPers and m.idExpediteur=a.idPers union SELECT g.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idDestinataire=$idPers and m.idExpediteur=g.idPers";
+    $query = "SELECT a.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idDestinataire=$idPers and m.idExpediteur=a.idPers union SELECT g.nom as expediteur, idDestinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idDestinataire=$idPers and m.idExpediteur=g.idPers order by dateEnvoi DESC";
     try {
     $req = $this->db->query($query);
     $result=$req->fetchAll(PDO::FETCH_ASSOC);
@@ -282,7 +273,7 @@
 
   public function getMessagesEnvoyes($idPers){
 
-    $query = "SELECT idExpediteur, a.nom as destinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idExpediteur=$idPers and m.idDestinataire=a.idPers union SELECT idExpediteur, g.nom as destinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idExpediteur=$idPers and m.idDestinataire=g.idPers";
+    $query = "SELECT idExpediteur, a.nom as destinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idExpediteur=$idPers and m.idDestinataire=a.idPers union SELECT idExpediteur, g.nom as destinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idExpediteur=$idPers and m.idDestinataire=g.idPers order by dateEnvoi DESC";
     try {
     $req = $this->db->query($query);
     $result=$req->fetchAll(PDO::FETCH_ASSOC);
@@ -296,7 +287,7 @@
  fonction messagerie
   */
  function AfficheMailRecu() { // affiche les mail contenus dans la boite de reception
-        $rquete1 = "SELECT * FROM message";
+        $rquete1 = "SELECT * FROM message order by dateEnvoi";
           //var_dump($rquete1) ;
           $rs =$this->db->query($rquete1);
           $rw = $rs->fetchAll(PDO::FETCH_CLASS,'Message');
@@ -319,7 +310,7 @@ function AfficheMailBrouillon() {
   }
   public function AfficheMailEnvoye($idPers){
 
-    $query = "SELECT idExpediteur, a.nom as destinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idExpediteur=$idPers and m.idDestinataire=a.idPers union SELECT idExpediteur, g.nom as destinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idExpediteur=$idPers and m.idDestinataire=g.idPers";
+    $query = "SELECT idExpediteur, a.nom as destinataire, dateEnvoi, objet  FROM message m, artiste a WHERE idExpediteur=$idPers and m.idDestinataire=a.idPers union SELECT idExpediteur, g.nom as destinataire, dateEnvoi, objet  FROM message m, groupeMusical g WHERE idExpediteur=$idPers and m.idDestinataire=g.idPers order by dateEnvoi DESC";
     try {
     $req = $this->db->query($query);
     $result=$req->fetchAll(PDO::FETCH_CLASS,'Message');
@@ -327,34 +318,18 @@ function AfficheMailBrouillon() {
       die("PDO Error : ".$e->getMessage());
     }
       return $result;
-  }
+  }/*
+  public function InsereMail($idExpediteur,$idDestinataire,$dateEnvoi) {
 
-
-   public function InsereMail($idExpediteur,$idDestinataire,$objet,$message,$estBrouillon) {
-      $query = "INSERT INTO message VALUES( '$idExpediteur','$idDestinataire',TIME(),'$objet','$message','$estBrouillon','False','False')";
-      var_dump($query);
-      try{
-      $req = $this->db->prepare($query);
-      $req->execute();
-        } catch (PDOException $e) {
-      echo 'Echec insertion évènement';
-      return false;
-      }
+    $query = "INSERT INTO message VALUES( $idExpediteur,$idDestinataire,$dateEnvoi,$objet,$message) WHERE idExpediteur='".$idExpediteur."' and idDestinataire='".$idDestinataire"' and dateEnvoi='".$dateEnvoi"' ";
+    try{
+    $req = $this->db->prepare($query);
+    $req->execute();
+      } catch (PDOException $e) {
+    echo 'Echec insertion évènement';
+    return false;
     }
-  public function getContacts($id){
-
-    $query = "SELECT * from groupeMusical g,booker_contacts bc where g.idPers = bc.idc and bc.idB = $id";
-    try {
-    $req = $this->db->query($query);
-    $result=$req->fetchAll(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-      die("PDO Error : ".$e->getMessage());
-    }
-      return $result;
-
-  }
-
-
-
+        return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
+      }*/
 
 }    ?>
