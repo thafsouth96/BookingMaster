@@ -19,7 +19,7 @@ include_once("../Model/DAO.class.php");
         $mdpConfirm = $_POST['mdpConfrim'];
 
         if($mdpConfirm == $mdp ) {
-          $newBooker = $dao->inscriptionBooker($nom,$email,$num,$prenom,$dateNaiss,$mdp) ;
+          $newBooker = $dao->inscription($nom,$email,$num,$prenom,$dateNaiss,$mdp) ;
           include_once("../View/bienvenue.view.php") ;
       }
 

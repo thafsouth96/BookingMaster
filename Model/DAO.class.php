@@ -71,7 +71,7 @@
 
         function inscription($nom,$email,$num,$prenom,$dateNaiss,$mdp) {
             $req = "INSERT INTO booker values ((SELECT count(*) + 1 from booker),'$nom','$email','$num','$prenom','$dateNaiss','$mdp')" ;
-            var_dump($req);
+            //var_dump($req);
             $sth=$this->db->query($req);
             return $sth;
         }
