@@ -78,7 +78,9 @@
 					url: 'http://google.com/',
 					start: '2016-05-28'
 				}
-			]
+			],eventAfterRender:function( event, element, view ) {
+				$(element).attr('database-id', (event.id == undefined ? '' : event.id));
+			},
 
 		});/*
     document.getElementById("testShow").onclick = function() {myFunction()};
@@ -86,12 +88,9 @@
       document.getElementById("testShow").innerHTML = "J'affiche quelque chose !";
     }*/
 
-      $(".fc-content").on('click',function(){
-        $("#testShow").html("J'affiche quelque chose !");
-      });
-      $(document).on("click",".fc-content",function(){
-        $("#testShow").html("J'affiche quelque chose !");
-      });
+		$(document).on("click",".fc-content",function(){
+			$("#testShow").append("Click sur " + $(this).parent().attr('database-id') + " " + $(this).html()+ "<br/>");
+		});
 	});
 
 
