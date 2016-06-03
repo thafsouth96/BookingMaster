@@ -20,8 +20,8 @@ $(document).ready(function(){
 
 
   $("#calendrierMenu").bind('click',function(){
-    //$("").load();
-      alert('Sorry, we are working on it ;)') ;
+    $("#tableauBord").load("../View/afficheCalendar.html");
+    //  alert('Sorry, we are working on it ;)') ;
   }) ;
 
   $("#notesMenu").bind('click',function(){
@@ -29,7 +29,7 @@ $(document).ready(function(){
       alert('Sorry, we are working on it ;)') ;
   }) ;
 
-  $("#paramètresMenu").bind('click',function(){
+  $("#parametresMenu").bind('click',function(){
       alert('Sorry, we are working on it ;)') ;
   }) ;
 
