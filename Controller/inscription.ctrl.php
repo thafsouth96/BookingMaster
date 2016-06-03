@@ -5,7 +5,7 @@ include_once("../Model/DAO.class.php");
 // IDEA: id,nom,email,num,prenom,datenaiss,mdp
 
         $nom= $_POST['nom'] ;
-      
+
         $email = $_POST['email'] ;
 
         $num = $_POST['num'] ;
@@ -22,9 +22,6 @@ include_once("../Model/DAO.class.php");
           $newBooker = $dao->inscriptionBooker($nom,$email,$num,$prenom,$dateNaiss,$mdp) ;
           include_once("../View/bienvenue.view.php") ;
       }
-
-
-
 
 
 ?>

@@ -3,7 +3,8 @@ $(document).ready(function() {
 	// Comportement des boutons de menus
 	$('form #suivant').bind('click', function() {
 			verifierEtape1() ;
-				});
+
+		});
 
 	$('form #reset').bind('click', function() {
 
@@ -11,10 +12,16 @@ $(document).ready(function() {
 				resetIns();
 
 	}
-});
+	});
+	//$('#lienConnexion').css("display","block") ;
+	$('#lienConnexion').bind('click', function() { // Au clic sur le bouton connexion"
+
+			$('body div').load('../View/connexion.view.html') ;
+
 
 });
 
+});
 function resetIns(){
 	$('#nom').val("");
 	$('#prenom').val("");
@@ -86,5 +93,5 @@ function verifierEtape1() {
 		$('#passwordConfirm').focus();
 		return false ;
 	}
-	return true ; 
+	return true ;
 }
