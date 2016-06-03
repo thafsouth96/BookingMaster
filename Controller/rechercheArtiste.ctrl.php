@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-    include_once("../model/DAO.class.php");
+    include_once("../Model/DAO.class.php");
 
 if(isset($_GET['rech']) && $_GET['rech']!=NULL){
 		$rechNom=$dao->rechercheArtisteNom($_GET['rech']);

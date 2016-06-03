@@ -7,7 +7,7 @@
 
    global $mailRecu;
    global $Booker1;
-   
+
    if(!isset($_SESSION)){
      session_start() ;
    }
