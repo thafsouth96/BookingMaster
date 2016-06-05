@@ -34,7 +34,8 @@ $(document).ready(function(){
   }) ;
 
   $("#deconnexionMenu").bind('click',function(){
-      $('body').load('../Controller/deconnexion.ctrl.php') ;
+      //alert('Sorry, we are working on it ;)') ;
+      $('html').load('../Controller/deconnexion.ctrl.php') ;
   }) ;
 
 

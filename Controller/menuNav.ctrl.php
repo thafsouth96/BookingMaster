@@ -27,13 +27,14 @@
       global $prenom ;
       $html =  "<nav id= \"content_menuNav\">\n";
       $html .= "<div class = \"profil\">
-                  <a class= \"profilMenu\"href=''><img src=\"../data/icon/MenuNav_icon/profil.png\"></a>\n
-                  <a href=''><p class =\"profilMenu\">".$prenom.' '.$nom."</p></a>\n
+                  <a class= \"profilMenu\"href='../Controller/tableauBord.ctrl.php'><img src=\"../data/icon/MenuNav_icon/profil.png\"></a>\n
+                  <a href='../Controller/tableauBord.ctrl.php'><p class =\"profilMenu\">".$prenom.' '.$nom."</p></a>\n
                 </div>\n
               <div id=\"content_rows\">\n";
 /*href='{$item['url']}'*/
       foreach($items as $key => $item) {
-        $html .= "<div class = \"hoverDiv\" id=".$key."Menu"."><a class = \"iconMenuNav\"><img src={$item['image']}></a> <a href='{$item['url']}'>{$item['text']}</a></div>\n";
+        //$html .= "<div class = \"hoverDiv\" id=".$key."Menu"."><a class = \"iconMenuNav\"><img src={$item['image']}></a> <a href='{$item['url']}'>{$item['text']}</a></div>\n";
+        $html .= "<div class = \"hoverDiv\" id=".$key."Menu"."><a class = \"iconMenuNav\"><img src={$item['image']}></a><a>{$item['text']}</a></div>\n";
       }
       $html .= "</div>\n";
       $html .= "</nav>\n";

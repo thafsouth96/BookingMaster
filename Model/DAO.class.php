@@ -332,4 +332,16 @@ function AfficheMailBrouillon() {
         return  $req->fetchAll(PDO::FETCH_CLASS,"evenement_evenement");
       }*/
 
+      public function InsereMail($idExpediteur,$idDestinataire,$objet,$message,$estBrouillon) {
+      $query = "INSERT INTO message VALUES( '$idExpediteur','$idDestinataire',datetime(),'$objet','$message','$estBrouillon','False','False')";
+      //var_dump($query);
+      try{
+      $req = $this->db->prepare($query);
+      $req->execute();
+        } catch (PDOException $e) {
+      echo 'Echec insertion message';
+      return false;
+       }
+     }
+
 }    ?>
