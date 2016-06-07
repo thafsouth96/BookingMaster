@@ -333,7 +333,7 @@ function AfficheMailBrouillon() {
       }*/
 
       public function InsereMail($idExpediteur,$idDestinataire,$objet,$message,$estBrouillon) {
-      $query = "INSERT INTO message VALUES( '$idExpediteur','$idDestinataire',datetime(),'$objet','$message','$estBrouillon','False','False')";
+      $query = "INSERT INTO message VALUES ('$idExpediteur','$idDestinataire',datetime(),'$objet','$message','$estBrouillon','False','False')";
       //var_dump($query);
       try{
       $req = $this->db->prepare($query);
